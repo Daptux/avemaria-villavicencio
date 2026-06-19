@@ -1,0 +1,150 @@
+Project Brief & PRD: Avemaría Villavicencio Landing Page
+
+1. Project Overview
+
+Client: Avemaría Villavicencio
+Location: Villavicencio, Colombia
+Project Type: High-Conversion Landing Page (Mobile-First)
+Primary Goal: Generate reservations, event inquiries, and visits via WhatsApp, digital menu access, and local SEO.
+
+2. Strategic Objectives
+
+
+
+
+
+Positioning: Establish Avemaría as a premium, natural, "outdoor experience" destination in Villavicencio, moving beyond just "food" to "gastronomic plan."
+
+
+
+Conversion (CRO): Minimize the path to action. Users should be able to book, view the menu, or get directions in under 60 seconds.
+
+
+
+Trust & Reputation: Leverage social proof (reviews) and clear operational data (FAQ, location) to build visitor confidence.
+
+
+
+Local SEO: Rank for high-intent keywords like "restaurante al aire libre Villavicencio" and "parrilla Villavicencio."
+
+3. Target Audience
+
+
+
+
+
+Local Families: Looking for a safe, natural space for weekend plans.
+
+
+
+Groups & Friends: Seeking a comfortable outdoor environment for celebrations.
+
+
+
+Couples: Looking for a scenic, premium atmosphere for dates.
+
+
+
+Event Planners: Individuals seeking venues for birthdays or small corporate gatherings.
+
+4. Information Architecture & UX Structure
+
+Core Sections:
+
+
+
+
+
+Hero Section: High-impact visual with immediate CTAs (WhatsApp, Menu, Maps).
+
+
+
+Quick Action Bar (Mobile): Sticky footer for persistent access to critical functions.
+
+
+
+The Experience: Emotional storytelling focusing on Nature, Grill, Family, and Atmosphere.
+
+
+
+Digital Menu: Visual category-based preview (Grill, Main Courses, Drinks, etc.) without heavy PDF dependency.
+
+
+
+Events & Celebrations: Dedicated lead capture for high-ticket bookings.
+
+
+
+Social Proof: Integrated Google/Tripadvisor reviews.
+
+
+
+Location & Operations: Map integration, address, and verified hours.
+
+
+
+FAQ: Pre-empting common queries (Pet-friendly, Parking, Payment).
+
+5. Visual Identity (Organic Gourmet Narrative)
+
+
+
+
+
+Palette: Deep Forest Green (#1b3022), Warm Earth/Terracotta, Creams, and Soft Gold.
+
+
+
+Typography: Elegant Serifs (Playfair Display) for headlines; Modern Sans-Serifs for readability.
+
+
+
+Style: Premium but approachable; organic textures (wood, fire, greenery).
+
+
+
+Tone of Voice: Warm, gastronomic, professional, and inviting.
+
+6. Functional Requirements
+
+
+
+
+
+WhatsApp Integration: Dynamic links with pre-filled intent-based messages (Reservation vs. Event vs. Menu).
+
+
+
+Responsive Design: Mobile-first approach with desktop-optimized views.
+
+
+
+SEO Optimization: Correct H1-H3 hierarchy, meta-descriptions, and LocalBusiness Schema preparation.
+
+
+
+Analytics Ready: Tracking for WhatsApp clicks, menu views, and scroll depth.
+
+7. Operational Constraints & Continuity
+
+
+
+
+
+Data Integrity: No unconfirmed claims. Missing data is marked as "Pendiente por confirmar" to ensure brand honesty.
+
+
+
+Language: Spanish-first content for local market alignment.
+
+8. Success Metrics (KPIs)
+
+
+
+
+
+Primary: Total clicks on WhatsApp Reservation buttons.
+
+
+
+Secondary: Map directions clicks, digital menu views, and event inquiry volume.

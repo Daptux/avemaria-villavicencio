@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Avemaría Villavicencio | Restaurante al aire libre, parrilla y celebraciones</title>
+<meta content="Visita Avemaría en Villavicencio: restaurante al aire libre para disfrutar buena comida, naturaleza, carta digital, ubicación y reservas por WhatsApp." name="description"/>
+<!-- VARIANTE: Immersive Visual Concept (alternativa a index.html, no lo reemplaza) -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Rye&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "error-container": "#ffdad6",
+                "on-surface-variant": "#434843",
+                "on-surface": "#1d1c18",
+                "surface-bright": "#fef9f2",
+                "on-secondary-fixed-variant": "#733514",
+                "on-primary-container": "#819986",
+                "secondary-fixed-dim": "#ffb694",
+                "on-secondary-container": "#783918",
+                "surface-container-lowest": "#ffffff",
+                "on-background": "#1d1c18",
+                "on-primary-fixed": "#0b2013",
+                "on-error": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "inverse-surface": "#32302c",
+                "surface-container-highest": "#e6e2db",
+                "tertiary-fixed-dim": "#e9c176",
+                "surface-container-low": "#f8f3ec",
+                "tertiary": "#211500",
+                "surface-dim": "#ded9d3",
+                "primary-fixed": "#d0e9d4",
+                "on-tertiary-container": "#b18d48",
+                "surface-container": "#f2ede6",
+                "inverse-primary": "#b4cdb8",
+                "on-tertiary-fixed-variant": "#5d4201",
+                "on-secondary": "#ffffff",
+                "surface-container-high": "#ece7e1",
+                "primary": "#061b0e",
+                "on-primary-fixed-variant": "#364c3c",
+                "on-primary": "#ffffff",
+                "secondary-fixed": "#ffdbcc",
+                "inverse-on-surface": "#f5f0e9",
+                "outline-variant": "#c3c8c1",
+                "on-secondary-fixed": "#351000",
+                "error": "#ba1a1a",
+                "surface-variant": "#e6e2db",
+                "primary-container": "#1b3022",
+                "on-tertiary-fixed": "#261900",
+                "secondary-container": "#ffa67c",
+                "background": "#fef9f2",
+                "secondary": "#904c29",
+                "tertiary-fixed": "#ffdea5",
+                "on-error-container": "#93000a",
+                "surface-tint": "#4d6453",
+                "primary-fixed-dim": "#b4cdb8",
+                "tertiary-container": "#3a2800",
+                "surface": "#fef9f2",
+                "outline": "#737973"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "container-max": "1280px",
+                "margin-desktop": "64px",
+                "section-gap": "120px",
+                "margin-mobile": "20px",
+                "base": "8px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "label-md": [ "DM Sans" ],
+                "body-md": [ "DM Sans" ],
+                "body-lg": [ "DM Sans" ],
+                "headline-md": [ "Playfair Display" ],
+                "headline-lg-mobile": [ "Playfair Display" ],
+                "display-lg": [ "Playfair Display" ],
+                "headline-lg": [ "Playfair Display" ]
+        },
+        "fontSize": {
+                "label-md": [ "14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" } ],
+                "body-md": [ "16px", { "lineHeight": "1.6", "fontWeight": "400" } ],
+                "body-lg": [ "18px", { "lineHeight": "1.6", "fontWeight": "400" } ],
+                "headline-md": [ "32px", { "lineHeight": "1.3", "fontWeight": "600" } ],
+                "headline-lg-mobile": [ "32px", { "lineHeight": "1.2", "fontWeight": "700" } ],
+                "display-lg": [ "64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" } ],
+                "headline-lg": [ "48px", { "lineHeight": "1.2", "fontWeight": "700" } ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        .gold-divider {
+            height: 1px;
+            background-color: #e9c176;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .gold-divider::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: #e9c176;
+            transform: rotate(45deg);
+            position: absolute;
+        }
+        .text-shadow-hero {
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+        /* Tipografía de marca (igualada al logo AVEMARÍA, estilo western/tuscan) */
+        .brand-font {
+            font-family: 'Rye', 'Playfair Display', serif !important;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+        /* Tarjetas de experiencia interactivas (acordeón que crece hacia los lados) */
+        .exp-grid { display: flex; flex-direction: column; gap: 2rem; }
+        .exp-card {
+            cursor: pointer;
+            background: rgba(255,248,235,0.10);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(233,193,118,0.25);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+            overflow: hidden;
+            transition: flex-grow .5s ease, box-shadow .35s ease, border-color .35s ease, transform .35s ease;
+        }
+        .exp-card:hover { transform: translateY(-3px); }
+        .exp-left { display: flex; flex-direction: column; align-items: center; width: 100%; }
+        .exp-head { display: flex; flex-direction: column; align-items: center; gap: .75rem; }
+        .exp-icon { width: 4rem; height: 4rem; border-radius: 9999px; background: rgba(144,76,41,0.9); color: #fef9f2; display: flex; align-items: center; justify-content: center; flex: none; }
+        .exp-icon .material-symbols-outlined { font-size: 1.875rem; }
+        .exp-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #ffdea5; line-height: 1.3; transition: font-size .4s ease; }
+        .exp-hint { color: rgba(233,193,118,0.7); margin-top: .25rem; transition: transform .35s ease; }
+        .exp-text { max-height: 0; opacity: 0; overflow: hidden; color: rgba(248,243,236,0.85); transition: max-height .5s ease, opacity .4s ease, margin-top .4s ease; }
+        .exp-text p { transition: font-size .4s ease; }
+        .exp-img { max-height: 0; opacity: 0; overflow: hidden; width: 100%; transition: max-height .55s ease, opacity .45s ease; }
+        .exp-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; }
+        .exp-img img.exp-contain { object-fit: contain; background: rgba(8,18,12,0.6); }
+        /* Estado expandido: resalta y agranda título + texto */
+        .exp-card.is-open {
+            box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+            border-color: rgba(233,193,118,0.6);
+            position: relative; z-index: 10;
+            justify-content: flex-start;
+        }
+        .exp-card.is-open .exp-hint { display: none; }
+        .exp-card.is-open .exp-icon { width: 4.75rem; height: 4.75rem; }
+        .exp-card.is-open .exp-icon .material-symbols-outlined { font-size: 2.25rem; }
+        .exp-card.is-open .exp-title { font-size: 36px; }
+        .exp-card.is-open .exp-text { max-height: 420px; opacity: 1; margin-top: 1.25rem; }
+        .exp-card.is-open .exp-text p { font-size: 20px; line-height: 1.75; }
+        .exp-card.is-open .exp-img { max-height: 700px; opacity: 1; }
+        /* Desktop: fila con acordeón; la tarjeta abierta crece hacia los lados, mismo orden */
+        @media (min-width: 768px) {
+            .exp-grid { flex-direction: row; align-items: stretch; }
+            .exp-card { flex: 1 1 0; min-width: 0; }
+            .exp-card.is-open { flex-grow: 5; text-align: left; align-items: stretch; flex-direction: row; gap: 2.5rem; min-height: 400px; }
+            .exp-card.is-open .exp-left { flex: 1; align-items: flex-start; justify-content: center; }
+            .exp-card.is-open .exp-head { flex-direction: row; align-items: center; gap: 1rem; }
+            .exp-card.is-open .exp-img { width: 48%; flex: none; }
+            .exp-card.is-open .exp-img { min-height: 360px; }
+        }
+        /* ===== Immersive Visual Concept: capas de fondo por sección ===== */
+        .immersive-experiencia { background: linear-gradient(160deg,#03100a 0%,#0b2013 55%,#061b0e 100%); }
+        .immersive-carta { background: radial-gradient(120% 80% at 50% 0%,#2a1206 0%,#120a06 45%,#0a0604 100%); }
+        .immersive-eventos { background: linear-gradient(160deg,#1b0f08 0%,#2a1206 50%,#120a06 100%); }
+        .immersive-resenas { background: linear-gradient(180deg,#061b0e 0%,#03100a 100%); }
+        .immersive-ubicacion { background: linear-gradient(180deg,#03100a 0%,#0b2013 100%); }
+        .immersive-faq { background: linear-gradient(180deg,#0b2013 0%,#061b0e 100%); }
+        /* Glassmorphism solo para cards/bloques destacados */
+        .glass-card {
+            background: rgba(255,248,235,0.10);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(233,193,118,0.25);
+            box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+        }
+        .faq-card-immersive {
+            background: rgba(27,48,34,0.55);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(233,193,118,0.22);
+        }
+    </style>
+<style>
+    body { min-height: max(884px, 100dvh); }
+  </style>
+</head>
+<body class="bg-[#03100a] text-surface font-body-md text-body-md antialiased pb-20 md:pb-0">
+<!-- Switch a versión clásica (solo desktop, no estorba la barra mobile) -->
+<a class="hidden md:flex fixed bottom-4 left-4 z-50 items-center gap-1 px-4 py-2 rounded-full bg-black/50 backdrop-blur-md text-surface text-[12px] font-label-md border border-white/15 hover:bg-black/70 transition-colors" href="index.html">← Versión clásica</a>
+<!-- TopAppBar (glass oscuro) -->
+<header class="bg-gradient-to-b from-[rgba(3,12,9,0.65)] via-[rgba(3,12,9,0.25)] to-transparent backdrop-blur-[2px] text-surface top-0 sticky z-50 [text-shadow:_0_2px_8px_rgba(0,0,0,0.55)]">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed-dim">local_fire_department</span>
+<span class="brand-font font-headline-md text-[24px] md:text-headline-md text-surface">AVEMARÍA</span>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-surface-container-low/90 hover:text-tertiary-fixed transition-colors duration-300 font-label-md text-[18px]" href="#carta">Carta</a>
+<a class="text-surface-container-low/90 hover:text-tertiary-fixed transition-colors duration-300 font-label-md text-[18px]" href="#experiencias">Experiencias</a>
+<a class="text-surface-container-low/90 hover:text-tertiary-fixed transition-colors duration-300 font-label-md text-[18px]" href="#eventos">Eventos</a>
+<a class="text-surface-container-low/90 hover:text-tertiary-fixed transition-colors duration-300 font-label-md text-[18px]" href="#ubicacion">Ubicación</a>
+<a class="text-surface-container-low/90 hover:text-tertiary-fixed transition-colors duration-300 font-label-md text-[18px]" href="#resenas">Reseñas</a>
+</nav>
+<a class="hidden md:flex items-center gap-2 px-6 py-2.5 bg-secondary text-surface rounded-full hover:bg-on-secondary-fixed-variant transition-colors scale-95 duration-200 shadow-md" href="https://wa.me/573104964953?text=Hola,%20quiero%20reservar%20en%20Avemaría.%20Fecha:%20__%20Hora:%20__%20Número%20de%20personas:%20__%20¿Celebran%20algo%20especial?:%20__">
+<span class="font-label-md text-[18px]">Reservar</span>
+</a>
+<!-- Mobile Menu Trigger -->
+<button type="button" aria-label="Abrir menú" class="md:hidden text-surface p-2">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</header>
+<!-- HERO SECTION -->
+<section class="relative w-full h-[751px] min-h-[600px] flex flex-col justify-start pt-20 md:pt-24 pb-16 px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="absolute inset-0 z-0 bg-primary">
+<img alt="Vista aérea de Avemaría Villavicencio rodeado de naturaleza, palmeras y montañas." class="w-full h-full object-cover object-[50%_42%] md:object-center" fetchpriority="high" src="assets/avemaria/hero/avemaria-aerea-hero.jpg"/>
+<!-- Capa 1: overlay verde cálido para legibilidad -->
+<div class="absolute inset-0 z-10 bg-[rgba(5,20,16,0.65)]"></div>
+<!-- Capa 2: gradiente inferior para reforzar H1, subtítulo y CTAs -->
+<div class="absolute inset-0 z-10 bg-gradient-to-t from-[rgba(3,12,9,0.82)] via-[rgba(3,12,9,0.20)] to-[rgba(3,12,9,0.45)]"></div>
+</div>
+<div class="relative z-20 max-w-container-max mx-auto w-full flex flex-col items-center text-center">
+<h1 class="font-headline-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-display-lg text-on-primary mb-4 text-shadow-hero">
+<span class="brand-font">Avemaría</span> Villavicencio
+            </h1>
+<p class="font-body-lg text-body-lg text-surface-container-low max-w-2xl mb-2 text-shadow-hero">
+                Restaurante al aire libre para compartir buena comida, naturaleza y momentos especiales.
+            </p>
+<p class="font-body-md text-sm text-surface-container-high/80 mb-8 text-shadow-hero">
+                Consulta disponibilidad, horarios y reservas por WhatsApp.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
+<a class="w-full sm:w-auto px-8 py-4 bg-secondary text-surface font-label-md text-label-md rounded-full hover:bg-on-secondary-fixed-variant transition-colors flex items-center justify-center gap-2 shadow-lg" href="https://wa.me/573104964953?text=Hola,%20quiero%20reservar%20en%20Avemaría.%20Fecha:%20__%20Hora:%20__%20Número%20de%20personas:%20__%20¿Celebran%20algo%20especial?:%20__">
+<span class="material-symbols-outlined">calendar_month</span>
+                    Reservar por WhatsApp
+                </a>
+<a class="w-full sm:w-auto px-8 py-4 border border-tertiary-fixed-dim text-surface bg-primary/30 backdrop-blur-sm font-label-md text-label-md rounded-full hover:bg-primary/50 transition-colors flex items-center justify-center gap-2" href="#carta">
+<span class="material-symbols-outlined">menu_book</span>
+                    Ver carta
+                </a>
+<a class="w-full sm:w-auto px-8 py-4 text-surface font-label-md text-label-md rounded-full hover:bg-surface/10 transition-colors flex items-center justify-center gap-2" href="#ubicacion">
+<span class="material-symbols-outlined">directions</span>
+                    Cómo llegar
+                </a>
+</div>
+</div>
+</section>
+<!-- EXPERIENCIA SECTION (fondo natural oscuro + glass cards) -->
+<section class="immersive-experiencia relative py-section-gap px-margin-mobile md:px-margin-desktop overflow-hidden" id="experiencias">
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="font-headline-md text-headline-md text-surface mb-6">Más que un restaurante, un plan para desconectarte</h2>
+<div class="gold-divider w-24 mx-auto mb-6"></div>
+<p class="font-body-lg text-body-lg text-surface-container-low/85">
+                Un espacio para comer rico, compartir sin afán y disfrutar el aire libre entre naturaleza, parrilla y buenos momentos.
+</p>
+</div>
+<div class="exp-grid">
+<!-- Feature 1 -->
+<div class="exp-card" role="button" tabindex="0" aria-expanded="false">
+<div class="exp-left">
+<div class="exp-head">
+<div class="exp-icon"><span class="material-symbols-outlined filled">local_fire_department</span></div>
+<h3 class="exp-title">Sabores a la parrilla</h3>
+</div>
+<span class="exp-hint material-symbols-outlined">expand_more</span>
+<div class="exp-text"><p class="font-body-md text-body-md">Platos para disfrutar con calma, compartir y vivir una experiencia llena de sabor.</p></div>
+</div>
+<div class="exp-img"><img alt="Lomo de res a la parrilla en Avemaría" loading="lazy" class="exp-contain" src="assets/avemaria/exp/parrilla.jpg"/></div>
+</div>
+<!-- Feature 2 -->
+<div class="exp-card" role="button" tabindex="0" aria-expanded="false">
+<div class="exp-left">
+<div class="exp-head">
+<div class="exp-icon"><span class="material-symbols-outlined filled">park</span></div>
+<h3 class="exp-title">Entorno natural</h3>
+</div>
+<span class="exp-hint material-symbols-outlined">expand_more</span>
+<div class="exp-text"><p class="font-body-md text-body-md">Un ambiente al aire libre para desconectarte de la rutina y disfrutar Villavicencio de otra manera.</p></div>
+</div>
+<div class="exp-img"><img alt="Entorno natural de Avemaría Villavicencio" loading="lazy" src="assets/avemaria/exp/entorno.jpg"/></div>
+</div>
+<!-- Feature 3 -->
+<div class="exp-card" role="button" tabindex="0" aria-expanded="false">
+<div class="exp-left">
+<div class="exp-head">
+<div class="exp-icon"><span class="material-symbols-outlined filled">groups</span></div>
+<h3 class="exp-title">Familia y amigos</h3>
+</div>
+<span class="exp-hint material-symbols-outlined">expand_more</span>
+<div class="exp-text"><p class="font-body-md text-body-md">El plan ideal para almuerzos, tardes especiales y encuentros memorables.</p></div>
+</div>
+<div class="exp-img"><img alt="Familia y amigos disfrutando en Avemaría" loading="lazy" src="assets/avemaria/exp/familia.jpg"/></div>
+</div>
+<!-- Feature 4 -->
+<div class="exp-card" role="button" tabindex="0" aria-expanded="false">
+<div class="exp-left">
+<div class="exp-head">
+<div class="exp-icon"><span class="material-symbols-outlined filled">celebration</span></div>
+<h3 class="exp-title">Celebraciones</h3>
+</div>
+<span class="exp-hint material-symbols-outlined">expand_more</span>
+<div class="exp-text"><p class="font-body-md text-body-md">Cumpleaños, reuniones y fechas importantes en un espacio cálido y natural.</p></div>
+</div>
+<div class="exp-img"><img alt="Celebraciones y eventos en Avemaría" loading="lazy" src="assets/avemaria/exp/celebraciones.jpg"/></div>
+</div>
+</div>
+</div>
+</section>
+<!-- CARTA REFERENCIAL SECTION (Asado · Parche · Picnic) -->
+<section class="immersive-carta py-section-gap px-margin-mobile md:px-margin-desktop" id="carta">
+<div class="max-w-container-max mx-auto">
+<!-- Intro -->
+<div class="flex flex-col lg:flex-row gap-8 lg:items-center mb-8">
+<div class="lg:flex-1">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-surface mb-4">Explora una muestra de nuestra carta</h2>
+<p class="font-body-lg text-body-lg text-surface-container-low/85 max-w-xl mb-6">Parrilla, picadas, sabores para compartir y opciones pensadas para disfrutar al aire libre en Villavicencio. Consulta la carta actual por WhatsApp.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-secondary text-surface rounded-full font-label-md text-label-md hover:bg-on-secondary-fixed-variant transition-colors shadow-md" href="https://wa.me/573104964953?text=Hola,%20quiero%20consultar%20la%20carta%20actual%20de%20Avemaría.">
+<span class="material-symbols-outlined">forum</span>
+                    Pedir carta por WhatsApp
+                </a>
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-tertiary-fixed text-tertiary-fixed rounded-full font-label-md text-label-md hover:bg-tertiary-fixed/10 transition-colors" href="#carta-categorias">
+<span class="material-symbols-outlined">restaurant_menu</span>
+                    Ver categorías
+                </a>
+</div>
+</div>
+<div class="lg:w-2/5 rounded-2xl overflow-hidden border border-tertiary-fixed-dim/30 shadow-xl">
+<img alt="Empanaditas recién hechas en Avemaría Villavicencio" loading="lazy" class="w-full h-56 md:h-72 object-cover" src="assets/avemaria/empanaditas.jpg"/>
+</div>
+</div>
+<!-- Nota referencial -->
+<div class="flex items-start gap-3 mb-12 bg-tertiary-fixed/10 border border-tertiary-fixed/25 rounded-xl px-4 py-3 text-surface-container-low/90">
+<span class="material-symbols-outlined text-tertiary-fixed text-[22px] shrink-0">info</span>
+<p class="font-body-md text-sm">Carta referencial en validación. Las opciones pueden variar según disponibilidad. Escríbenos por WhatsApp para recibir la carta actual de Avemaría.</p>
+</div>
+<!-- Categorías -->
+<div id="carta-categorias" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Para empezar -->
+<div class="glass-card rounded-2xl p-6 flex flex-col">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-11 h-11 rounded-full bg-secondary/90 text-surface flex items-center justify-center shrink-0"><span class="material-symbols-outlined">bakery_dining</span></div>
+<h3 class="font-headline-md text-[20px] font-bold text-tertiary-fixed">Para empezar</h3>
+</div>
+<p class="font-body-md text-sm text-surface-container-low/80 mb-4">Entradas y antojos para abrir el parche.</p>
+<span class="font-label-md text-[11px] uppercase tracking-widest text-tertiary-fixed/70 mb-2">Ejemplos referenciales</span>
+<ul class="font-body-md text-sm text-surface-container-low/90 list-disc list-inside space-y-1 marker:text-tertiary-fixed">
+<li>Arepitas con hogao</li>
+<li>Chorizo artesanal</li>
+<li>Morcilla</li>
+<li>Chicharrón crocante</li>
+<li>Papas criollas</li>
+<li>Yucas fritas</li>
+<li>Mazorca asada</li>
+</ul>
+</div>
+<!-- Para compartir (destacada) -->
+<div class="glass-card ring-1 ring-tertiary-fixed/50 rounded-2xl p-6 flex flex-col">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-11 h-11 rounded-full bg-secondary/90 text-surface flex items-center justify-center shrink-0"><span class="material-symbols-outlined">dinner_dining</span></div>
+<h3 class="font-headline-md text-[20px] font-bold text-tertiary-fixed">Para compartir</h3>
+<span class="ml-auto px-2 py-1 rounded-full bg-tertiary-fixed/15 text-tertiary-fixed font-label-md text-[10px] uppercase tracking-widest">Más pedidas</span>
+</div>
+<p class="font-body-md text-sm text-surface-container-low/80 mb-4">Picadas, tablas y opciones para disfrutar en grupo.</p>
+<span class="font-label-md text-[11px] uppercase tracking-widest text-tertiary-fixed/70 mb-2">Ejemplos referenciales</span>
+<ul class="font-body-md text-sm text-surface-container-low/90 list-disc list-inside space-y-1 marker:text-tertiary-fixed">
+<li>Picada Avemaría</li>
+<li>Picada llanera</li>
+<li>Tabla de carnes</li>
+<li>Combo picnic para dos</li>
+<li>Combo familiar</li>
+<li>Parrillada para amigos</li>
+</ul>
+</div>
+<!-- Parrilla (destacada) -->
+<div class="glass-card ring-1 ring-tertiary-fixed/50 rounded-2xl p-6 flex flex-col">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-11 h-11 rounded-full bg-secondary/90 text-surface flex items-center justify-center shrink-0"><span class="material-symbols-outlined">outdoor_grill</span></div>
+<h3 class="font-headline-md text-[20px] font-bold text-tertiary-fixed">Parrilla</h3>
+<span class="ml-auto px-2 py-1 rounded-full bg-tertiary-fixed/15 text-tertiary-fixed font-label-md text-[10px] uppercase tracking-widest">Más pedidas</span>
+</div>
+<p class="font-body-md text-sm text-surface-container-low/80 mb-4">Sabores al fuego para quienes vienen por la brasa.</p>
+<span class="font-label-md text-[11px] uppercase tracking-widest text-tertiary-fixed/70 mb-2">Ejemplos referenciales</span>
+<ul class="font-body-md text-sm text-surface-container-low/90 list-disc list-inside space-y-1 marker:text-tertiary-fixed">
+<li>Lomo de res</li>
+<li>Punta de anca</li>
+<li>Costilla de cerdo</li>
+<li>Pechuga a la parrilla</li>
+<li>Churrasco</li>
+<li>Hamburguesa artesanal</li>
+<li>Corte de la casa</li>
+</ul>
+</div>
+<!-- Sabores llaneros (destacada) -->
+<div class="glass-card ring-1 ring-tertiary-fixed/50 rounded-2xl p-6 flex flex-col">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-11 h-11 rounded-full bg-secondary/90 text-surface flex items-center justify-center shrink-0"><span class="material-symbols-outlined">local_fire_department</span></div>
+<h3 class="font-headline-md text-[20px] font-bold text-tertiary-fixed">Sabores llaneros</h3>
+<span class="ml-auto px-2 py-1 rounded-full bg-tertiary-fixed/15 text-tertiary-fixed font-label-md text-[10px] uppercase tracking-widest">Más pedidas</span>
+</div>
+<p class="font-body-md text-sm text-surface-container-low/80 mb-4">Referencias inspiradas en la cocina del territorio.</p>
+<span class="font-label-md text-[11px] uppercase tracking-widest text-tertiary-fixed/70 mb-2">Ejemplos referenciales</span>
+<ul class="font-body-md text-sm text-surface-container-low/90 list-disc list-inside space-y-1 marker:text-tertiary-fixed">
+<li>Carne a la llanera</li>
+<li>Sancocho</li>
+<li>Carne oreada</li>
+<li>Arepa de choclo</li>
+<li>Patacones</li>
+<li>Yuca</li>
+<li>Suero costeño</li>
+</ul>
+<p class="mt-3 font-body-md text-[12px] italic text-surface-container-low/70">Algunas opciones están sujetas a disponibilidad y confirmación con el restaurante.</p>
+</div>
+<!-- Plan familiar -->
+<div class="glass-card rounded-2xl p-6 flex flex-col">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-11 h-11 rounded-full bg-secondary/90 text-surface flex items-center justify-center shrink-0"><span class="material-symbols-outlined">family_restroom</span></div>
+<h3 class="font-headline-md text-[20px] font-bold text-tertiary-fixed">Plan familiar</h3>
+</div>
+<p class="font-body-md text-sm text-surface-container-low/80 mb-4">Opciones pensadas para almuerzos, niños y encuentros tranquilos.</p>
+<span class="font-label-md text-[11px] uppercase tracking-widest text-tertiary-fixed/70 mb-2">Ejemplos referenciales</span>
+<ul class="font-body-md text-sm text-surface-container-low/90 list-disc list-inside space-y-1 marker:text-tertiary-fixed">
+<li>Platos para niños</li>
+<li>Papas</li>
+<li>Pollo a la parrilla</li>
+<li>Hamburguesa sencilla</li>
+<li>Opciones para compartir</li>
+<li>Bebidas naturales</li>
+</ul>
+</div>
+<!-- Bebidas -->
+<div class="glass-card rounded-2xl p-6 flex flex-col">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-11 h-11 rounded-full bg-secondary/90 text-surface flex items-center justify-center shrink-0"><span class="material-symbols-outlined">local_bar</span></div>
+<h3 class="font-headline-md text-[20px] font-bold text-tertiary-fixed">Bebidas</h3>
+</div>
+<p class="font-body-md text-sm text-surface-container-low/80 mb-4">Bebidas refrescantes para acompañar el plan.</p>
+<span class="font-label-md text-[11px] uppercase tracking-widest text-tertiary-fixed/70 mb-2">Ejemplos referenciales</span>
+<ul class="font-body-md text-sm text-surface-container-low/90 list-disc list-inside space-y-1 marker:text-tertiary-fixed">
+<li>Limonada natural</li>
+<li>Limonada de coco</li>
+<li>Jugos naturales</li>
+<li>Gaseosas</li>
+<li>Agua</li>
+<li>Café</li>
+<li>Bebidas de la casa</li>
+</ul>
+</div>
+<!-- Postres -->
+<div class="glass-card rounded-2xl p-6 flex flex-col">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-11 h-11 rounded-full bg-secondary/90 text-surface flex items-center justify-center shrink-0"><span class="material-symbols-outlined">icecream</span></div>
+<h3 class="font-headline-md text-[20px] font-bold text-tertiary-fixed">Postres</h3>
+</div>
+<p class="font-body-md text-sm text-surface-container-low/80 mb-4">Un cierre dulce para la visita.</p>
+<span class="font-label-md text-[11px] uppercase tracking-widest text-tertiary-fixed/70 mb-2">Ejemplos referenciales</span>
+<ul class="font-body-md text-sm text-surface-container-low/90 list-disc list-inside space-y-1 marker:text-tertiary-fixed">
+<li>Torta de la casa</li>
+<li>Brownie</li>
+<li>Helado</li>
+<li>Postre de maracuyá</li>
+<li>Postre típico</li>
+</ul>
+</div>
+</div>
+<!-- Eventos y grupos (bloque ancho) -->
+<div class="glass-card rounded-2xl p-6 md:p-8 mt-6 flex flex-col md:flex-row md:items-center gap-6">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-11 h-11 rounded-full bg-secondary/90 text-surface flex items-center justify-center shrink-0"><span class="material-symbols-outlined">celebration</span></div>
+<h3 class="font-headline-md text-[22px] font-bold text-tertiary-fixed">Eventos y grupos</h3>
+</div>
+<p class="font-body-md text-sm text-surface-container-low/80 mb-4">Opciones para cumpleaños, reuniones familiares y grupos.</p>
+<ul class="font-body-md text-sm text-surface-container-low/90 grid grid-cols-2 gap-x-6 gap-y-1 list-disc list-inside marker:text-tertiary-fixed">
+<li>Menú para grupos</li>
+<li>Picadas para compartir</li>
+<li>Parrilladas</li>
+<li>Bebidas</li>
+<li>Celebraciones</li>
+<li>Consultas personalizadas</li>
+</ul>
+</div>
+<a class="inline-flex shrink-0 items-center justify-center gap-2 px-6 py-4 bg-secondary text-surface rounded-full font-label-md text-label-md hover:bg-on-secondary-fixed-variant transition-colors shadow-lg" href="https://wa.me/573104964953?text=Hola,%20quiero%20información%20para%20un%20grupo%20o%20evento%20en%20Avemaría.%20Fecha%20tentativa:%20__%20Número%20de%20personas:%20__%20Tipo%20de%20evento:%20__">
+<span class="material-symbols-outlined">groups</span>
+            Consultar opciones para grupo
+        </a>
+</div>
+<!-- CTA final carta -->
+<div class="glass-card rounded-2xl p-8 mt-10 text-center flex flex-col items-center">
+<h3 class="font-headline-md text-[24px] text-surface mb-2">¿Quieres saber qué hay disponible hoy?</h3>
+<p class="font-body-md text-body-md text-surface-container-low/85 mb-6 max-w-xl">Escríbenos y te compartimos la carta actual de Avemaría por WhatsApp.</p>
+<a class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-surface rounded-full font-label-md text-label-md hover:bg-on-secondary-fixed-variant transition-colors shadow-lg" href="https://wa.me/573104964953?text=Hola,%20quiero%20consultar%20la%20carta%20actual%20de%20Avemaría.">
+<span class="material-symbols-outlined">forum</span>
+            Pedir carta por WhatsApp
+        </a>
+</div>
+</div>
+</section>
+<!-- EVENTOS SECTION (fondo cálido) -->
+<section class="immersive-eventos py-section-gap px-margin-mobile md:px-margin-desktop" id="eventos">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-1/2">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-surface mb-6">Celebra en <span class="brand-font">Avemaría</span></h2>
+<p class="font-body-lg text-body-lg text-surface-container-low/85 mb-8">
+                Cumpleaños, reuniones familiares, fechas especiales y encuentros con amigos en un ambiente natural y cómodo.
+            </p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="glass-card flex items-center gap-3 p-4 rounded-xl">
+<span class="material-symbols-outlined text-tertiary-fixed">cake</span>
+<span class="font-label-md text-surface font-semibold">Cumpleaños</span>
+</div>
+<div class="glass-card flex items-center gap-3 p-4 rounded-xl">
+<span class="material-symbols-outlined text-tertiary-fixed">family_restroom</span>
+<span class="font-label-md text-surface font-semibold">Reuniones familiares</span>
+</div>
+<div class="glass-card flex items-center gap-3 p-4 rounded-xl">
+<span class="material-symbols-outlined text-tertiary-fixed">favorite</span>
+<span class="font-label-md text-surface font-semibold">Fechas especiales</span>
+</div>
+<div class="glass-card flex items-center gap-3 p-4 rounded-xl">
+<span class="material-symbols-outlined text-tertiary-fixed">diversity_3</span>
+<span class="font-label-md text-surface font-semibold">Grupos y encuentros</span>
+</div>
+</div>
+<a class="inline-flex w-full sm:w-auto px-8 py-4 bg-secondary text-surface font-label-md text-label-md rounded-full hover:bg-on-secondary-fixed-variant transition-colors items-center justify-center gap-2 shadow-lg" href="https://wa.me/573104964953?text=Hola,%20quiero%20información%20para%20celebrar%20un%20evento%20en%20Avemaría.%20Fecha%20tentativa:%20__%20Número%20de%20personas:%20__%20Tipo%20de%20evento:%20__">
+<span class="material-symbols-outlined">celebration</span>
+                Consultar evento por WhatsApp
+            </a>
+</div>
+<div class="w-full md:w-1/2 rounded-2xl overflow-hidden border border-tertiary-fixed-dim/30 shadow-xl">
+<img alt="Celebraciones en Avemaría" loading="lazy" class="w-full h-auto block" src="Foto/vive-avemaria.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- REVIEWS SECTION (fondo verde oscuro, cards crema legibles) -->
+<section class="immersive-resenas py-section-gap px-margin-mobile md:px-margin-desktop" id="resenas">
+<div class="max-w-container-max mx-auto text-center">
+<h2 class="font-headline-md text-headline-md text-surface mb-6">Lo que dicen quienes nos visitan</h2>
+<div class="gold-divider w-24 mx-auto mb-12"></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Review 1 -->
+<div class="bg-surface p-8 rounded-2xl shadow-xl border border-tertiary-fixed-dim/30 flex flex-col items-center text-center">
+<div class="flex text-tertiary-fixed-dim mb-4">
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+</div>
+<p class="font-body-md italic text-on-surface-variant mb-6">"La comida en Avemaría es espectacular, con excelente sabor y muy buena presentación. La atención también fue sobresaliente; todo el personal fue muy amable, atento y siempre dispuesto a ayudar, lo que hace que la experiencia sea aún mejor."</p>
+<span class="font-label-md text-primary font-bold">Felipe Martínez</span>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface p-8 rounded-2xl shadow-xl border border-tertiary-fixed-dim/30 flex flex-col items-center text-center">
+<div class="flex text-tertiary-fixed-dim mb-4">
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+</div>
+<p class="font-body-md italic text-on-surface-variant mb-6">"La comida es deliciosa, y sin mencionar el ambiente, todo espectacular, gracias a la mesera Valentina por su atención."</p>
+<span class="font-label-md text-primary font-bold">Deicy Ortiz</span>
+</div>
+<!-- Review 3 -->
+<div class="bg-surface p-8 rounded-2xl shadow-xl border border-tertiary-fixed-dim/30 flex flex-col items-center text-center">
+<div class="flex text-tertiary-fixed-dim mb-4">
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+</div>
+<p class="font-body-md italic text-on-surface-variant mb-6">"La comida del restaurante italiano muy rica, el servicio excelente, los estaré visitando pronto, gracias."</p>
+<span class="font-label-md text-primary font-bold">Lina Vargas</span>
+</div>
+<!-- Review 4 -->
+<div class="bg-surface p-8 rounded-2xl shadow-xl border border-tertiary-fixed-dim/30 flex flex-col items-center text-center md:col-start-2">
+<div class="flex text-tertiary-fixed-dim mb-4">
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+</div>
+<p class="font-body-md italic text-on-surface-variant mb-6">"Excelente absolutamente todo, el servicio, la atención, la comida, recomiendo ir a la Litte Italy, la comida es deliciosa y la atención de Andrés es perfecta."</p>
+<span class="font-label-md text-primary font-bold">William Sánchez</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a class="px-8 py-3 bg-secondary text-surface rounded-full font-label-md hover:bg-on-secondary-fixed-variant transition-colors" href="https://maps.app.goo.gl/CSLYTYc223iewn6D9" target="_blank" rel="noopener">Ver reseñas</a>
+<a class="px-8 py-3 border-2 border-tertiary-fixed text-tertiary-fixed rounded-full font-label-md hover:bg-tertiary-fixed/10 transition-colors" href="https://maps.app.goo.gl/CSLYTYc223iewn6D9" target="_blank" rel="noopener">Dejar reseña</a>
+</div>
+</div>
+</section>
+<!-- LOCATION SECTION (prioriza función: card sólida + mapa) -->
+<section class="immersive-ubicacion py-section-gap px-margin-mobile md:px-margin-desktop" id="ubicacion">
+<div class="max-w-container-max mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="font-headline-md text-headline-md text-surface mb-4">Estamos en Villavicencio</h2>
+<p class="font-body-lg text-body-lg text-surface-container-low/85">
+                Encuentra fácilmente Avemaría y confirma tu visita antes de llegar.
+            </p>
+</div>
+<div class="flex flex-col lg:flex-row gap-8 bg-surface-container-low rounded-3xl overflow-hidden border border-tertiary-fixed-dim/30 shadow-2xl">
+<div class="w-full lg:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+<div class="mb-8">
+<div class="flex items-start gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h3 class="font-headline-md text-[20px] font-bold text-primary mb-1">Dirección</h3>
+<p class="font-body-md text-on-surface-variant">Km 2 vía antigua Restrepo, Villavicencio</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<h3 class="font-headline-md text-[20px] font-bold text-primary mb-1">Horarios</h3>
+<div class="font-body-md text-on-surface-variant">
+<p>Lunes: Cerrado</p>
+<p>Martes: 5:00 p.m. – 10:00 p.m.</p>
+<p>Miércoles y jueves: 4:00 p.m. – 10:00 p.m.</p>
+<p>Viernes y sábado: 12:00 m. – 10:30 p.m.</p>
+<p>Domingo: 12:00 m. – 10:00 p.m.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 mt-auto">
+<a class="px-6 py-3 bg-primary text-surface rounded-full font-label-md text-center hover:bg-primary-container transition-colors" href="https://maps.app.goo.gl/CSLYTYc223iewn6D9" target="_blank" rel="noopener">Abrir en Google Maps</a>
+<a class="px-6 py-3 border-2 border-secondary text-secondary rounded-full font-label-md text-center hover:bg-secondary/10 transition-colors" href="https://wa.me/573104964953?text=Hola,%20quiero%20visitar%20Avemaría.%20¿Me%20pueden%20confirmar%20ubicación%20y%20horario%20de%20atención?">Confirmar horario por WhatsApp</a>
+</div>
+</div>
+<div class="w-full lg:w-1/2 min-h-[400px] bg-surface-variant relative">
+<iframe title="Ubicación de Avemaría en Google Maps" class="w-full h-full min-h-[400px] border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Avemar%C3%ADa%20Villavicencio&amp;ll=4.1735671,-73.6431215&amp;z=16&amp;output=embed"></iframe>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN QR OPINIÓN (reemplaza Preguntas Frecuentes) -->
+<section class="immersive-faq py-section-gap px-margin-mobile md:px-margin-desktop">
+<div class="max-w-2xl mx-auto text-center flex flex-col items-center">
+<h2 class="font-headline-md text-headline-md text-surface mb-4">¡Tu opinión nos importa!</h2>
+<p class="font-body-lg text-body-lg text-surface-container-low/85 mb-10">Cuéntanos tu experiencia: escanea el código QR o, si estás desde el celular, diligencia nuestro formulario de PQRS con un clic.</p>
+<div class="bg-white p-5 rounded-2xl shadow-xl mb-8">
+<img alt="Código QR para dejar tu opinión sobre Avemaría Villavicencio" loading="lazy" class="w-56 h-56 md:w-64 md:h-64 block" src="assets/avemaria/qr-code.png"/>
+</div>
+<a class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-surface rounded-full font-label-md text-label-md hover:bg-on-secondary-fixed-variant transition-colors shadow-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSfZg1KBw52HbXHIvBhtHuSwOJlrcvVeE8SaWRhUvpI501tlaA/viewform" target="_blank" rel="noopener">
+<span class="material-symbols-outlined">feedback</span>
+            PQRS
+        </a>
+</div>
+</section>
+<!-- Banda visual final (solo imagen, sin texto ni botones; conserva la altura original) -->
+<section class="relative min-h-[510px] md:min-h-[412px] py-section-gap px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Ambiente de Avemaría Villavicencio" loading="lazy" class="w-full h-full object-cover object-center" src="assets/avemaria/hero/avemaria-aerea-hero.jpg"/>
+<div class="absolute inset-0 bg-[rgba(3,12,9,0.80)]"></div>
+</div>
+</section>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-inverse-surface shadow-[0_-4px_12px_rgba(0,0,0,0.1)] left-0 flex justify-around items-center py-3 px-2 md:hidden">
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-container font-bold bg-secondary-fixed/20 rounded-xl px-4 py-2 hover:bg-surface-container-high transition-all" href="https://wa.me/573104964953?text=Hola,%20quiero%20reservar%20en%20Avemaría.%20Fecha:%20__%20Hora:%20__%20Número%20de%20personas:%20__%20¿Celebran%20algo%20especial?:%20__">
+<span class="material-symbols-outlined mb-1 filled">calendar_month</span>
+<span class="font-label-md text-[12px]">Reservar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-lg" href="#carta">
+<span class="material-symbols-outlined mb-1">menu_book</span>
+<span class="font-label-md text-[12px]">Carta</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-lg" href="#ubicacion">
+<span class="material-symbols-outlined mb-1">location_on</span>
+<span class="font-label-md text-[12px]">Ubicación</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-lg" href="#resenas">
+<span class="material-symbols-outlined mb-1">star</span>
+<span class="font-label-md text-[12px]">Reseñas</span>
+</a>
+</nav>
+<!-- Footer (sólido verde bosque) -->
+<footer class="bg-primary dark:bg-surface-container-highest px-margin-mobile md:px-margin-desktop py-section-gap mb-16 md:mb-0">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-12 mb-8">
+<div class="md:col-span-1 flex flex-col gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-3xl">local_fire_department</span>
+<h2 class="brand-font font-headline-lg text-headline-md text-secondary-fixed">AVEMARÍA</h2>
+</div>
+<p class="font-body-md text-body-md text-on-primary/70 dark:text-on-surface/70">
+                    Restaurante al aire libre para compartir buena comida, naturaleza y momentos especiales.
+                </p>
+<div class="flex gap-4">
+<a aria-label="Instagram @avemaria_villavicencio" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary-fixed hover:text-primary transition-colors" href="https://www.instagram.com/avemaria_villavicencio/" target="_blank" rel="noopener">
+<span class="material-symbols-outlined">photo_camera</span>
+</a>
+<a aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary-fixed hover:text-primary transition-colors" href="https://wa.me/573104964953">
+<span class="material-symbols-outlined">chat</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-[16px] text-white font-bold mb-6">Contacto</h4>
+<ul class="flex flex-col gap-4">
+<li class="flex items-start gap-3 text-on-primary/70">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">location_on</span>
+<span class="font-body-md">Km 2 vía antigua Restrepo, Villavicencio</span>
+</li>
+<li class="flex items-start gap-3 text-on-primary/70">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">schedule</span>
+<span class="font-body-md">Mar 5–10 p.m. · Mié–Jue 4–10 p.m. · Vie–Sáb 12 m.–10:30 p.m. · Dom 12 m.–10 p.m. · Lun cerrado</span>
+</li>
+<li class="flex items-start gap-3 text-on-primary/70">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">phone_iphone</span>
+<span class="font-body-md">+57 310 4964953</span>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-[16px] text-white font-bold mb-6">Enlaces</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="font-body-md text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#carta">Carta</a></li>
+<li><a class="font-body-md text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#experiencias">Experiencias</a></li>
+<li><a class="font-body-md text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#eventos">Eventos</a></li>
+<li><a class="font-body-md text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#ubicacion">Ubicación</a></li>
+<li><a class="font-body-md text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#resenas">Reseñas</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-[16px] text-white font-bold mb-6">Acciones</h4>
+<ul class="flex flex-col gap-4">
+<li>
+<a class="inline-block px-6 py-2 bg-secondary text-surface rounded-full font-label-md hover:bg-on-secondary-fixed-variant transition-colors" href="https://wa.me/573104964953?text=Hola,%20quiero%20reservar%20en%20Avemaría.%20Fecha:%20__%20Hora:%20__%20Número%20de%20personas:%20__%20¿Celebran%20algo%20especial?:%20__">Reservar ahora</a>
+</li>
+<li>
+<a class="inline-block px-6 py-2 border border-white/20 text-white rounded-full font-label-md hover:bg-white/10 transition-colors mt-2" href="https://maps.app.goo.gl/CSLYTYc223iewn6D9" target="_blank" rel="noopener">Ver en Google Maps</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-sm text-on-primary/50 text-center md:text-left">
+                © 2024 Avemaría Villavicencio. Auténtica Parrilla &amp; Naturaleza.
+            </p>
+<div class="flex gap-6">
+<a class="font-body-md text-sm text-on-primary/50 hover:text-white transition-colors" href="#">Políticas de Privacidad</a>
+<a class="font-body-md text-sm text-on-primary/50 hover:text-white transition-colors" href="#">Términos y Condiciones</a>
+</div>
+</div>
+</footer>
+<script>
+  // Tarjetas de experiencia: click/Enter/Espacio para expandir con animación
+  var expCards = document.querySelectorAll('.exp-card');
+  expCards.forEach(function (card) {
+    function toggle() {
+      var willOpen = !card.classList.contains('is-open');
+      expCards.forEach(function (c) {
+        c.classList.remove('is-open');
+        c.setAttribute('aria-expanded', 'false');
+      });
+      if (willOpen) {
+        card.classList.add('is-open');
+        card.setAttribute('aria-expanded', 'true');
+      }
+    }
+    card.addEventListener('click', toggle);
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+</script>
+</body></html>

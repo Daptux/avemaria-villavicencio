@@ -1,0 +1,15 @@
+# Vercel
+.vercel
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs / temporales
+*.log
+*.jsonl
+tmp_*
+
+# Dependencias (por si en el futuro se usa build)
+node_modules/

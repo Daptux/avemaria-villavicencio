@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Avemaría Villavicencio | Restaurante al aire libre, parrilla y celebraciones</title>
+<meta content="Visita Avemaría en Villavicencio: restaurante al aire libre para disfrutar buena comida, naturaleza, carta digital, ubicación y reservas por WhatsApp." name="description"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "error-container": "#ffdad6",
+                "on-surface-variant": "#434843",
+                "on-surface": "#1d1c18",
+                "surface-bright": "#fef9f2",
+                "on-secondary-fixed-variant": "#733514",
+                "on-primary-container": "#819986",
+                "secondary-fixed-dim": "#ffb694",
+                "on-secondary-container": "#783918",
+                "surface-container-lowest": "#ffffff",
+                "on-background": "#1d1c18",
+                "on-primary-fixed": "#0b2013",
+                "on-error": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "inverse-surface": "#32302c",
+                "surface-container-highest": "#e6e2db",
+                "tertiary-fixed-dim": "#e9c176",
+                "surface-container-low": "#f8f3ec",
+                "tertiary": "#211500",
+                "surface-dim": "#ded9d3",
+                "primary-fixed": "#d0e9d4",
+                "on-tertiary-container": "#b18d48",
+                "surface-container": "#f2ede6",
+                "inverse-primary": "#b4cdb8",
+                "on-tertiary-fixed-variant": "#5d4201",
+                "on-secondary": "#ffffff",
+                "surface-container-high": "#ece7e1",
+                "primary": "#061b0e",
+                "on-primary-fixed-variant": "#364c3c",
+                "on-primary": "#ffffff",
+                "secondary-fixed": "#ffdbcc",
+                "inverse-on-surface": "#f5f0e9",
+                "outline-variant": "#c3c8c1",
+                "on-secondary-fixed": "#351000",
+                "error": "#ba1a1a",
+                "surface-variant": "#e6e2db",
+                "primary-container": "#1b3022",
+                "on-tertiary-fixed": "#261900",
+                "secondary-container": "#ffa67c",
+                "background": "#fef9f2",
+                "secondary": "#904c29",
+                "tertiary-fixed": "#ffdea5",
+                "on-error-container": "#93000a",
+                "surface-tint": "#4d6453",
+                "primary-fixed-dim": "#b4cdb8",
+                "tertiary-container": "#3a2800",
+                "surface": "#fef9f2",
+                "outline": "#737973"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "container-max": "1280px",
+                "margin-desktop": "64px",
+                "section-gap": "120px",
+                "margin-mobile": "20px",
+                "base": "8px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "label-md": [
+                        "DM Sans"
+                ],
+                "body-md": [
+                        "DM Sans"
+                ],
+                "body-lg": [
+                        "DM Sans"
+                ],
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "headline-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "headline-lg": [
+                        "Playfair Display"
+                ]
+        },
+        "fontSize": {
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-lg": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        .gold-divider {
+            height: 1px;
+            background-color: #e9c176;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .gold-divider::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: #e9c176;
+            transform: rotate(45deg);
+            position: absolute;
+        }
+        .text-shadow-hero {
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased pb-20 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-background text-secondary-fixed docked full-width top-0 sticky z-50 shadow-sm opacity-95">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">local_fire_department</span>
+<span class="font-headline-md text-[24px] md:text-headline-md font-bold tracking-tight text-primary">AVEMARÍA</span>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300 font-label-md text-label-md" href="#carta">Carta</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300 font-label-md text-label-md" href="#experiencias">Experiencias</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300 font-label-md text-label-md" href="#eventos">Eventos</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300 font-label-md text-label-md" href="#ubicacion">Ubicación</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300 font-label-md text-label-md" href="#resenas">Reseñas</a>
+</nav>
+<a class="hidden md:flex items-center gap-2 px-6 py-2.5 bg-secondary text-surface rounded-full hover:bg-on-secondary-fixed-variant transition-colors scale-95 duration-200 shadow-md" href="https://wa.me/573104964953?text=Hola,%20quiero%20reservar%20en%20Avemaría.%20Fecha:%20__%20Hora:%20__%20Número%20de%20personas:%20__%20¿Celebran%20algo%20especial?:%20__">
+<span class="font-label-md text-label-md">Reservar</span>
+</a>
+<!-- Mobile Menu Trigger -->
+<button type="button" aria-label="Abrir menú" class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</header>
+<!-- HERO SECTION -->
+<section class="relative w-full h-[751px] min-h-[600px] flex flex-col justify-end pb-16 px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="absolute inset-0 z-0 bg-primary">
+<img alt="Vista aérea de Avemaría Villavicencio rodeado de naturaleza, palmeras y montañas." class="w-full h-full object-cover object-[50%_42%] md:object-center" fetchpriority="high" src="assets/avemaria/hero/avemaria-aerea-hero.jpg"/>
+<!-- Capa 1: overlay verde cálido para legibilidad -->
+<div class="absolute inset-0 z-10 bg-[rgba(5,20,16,0.62)]"></div>
+<!-- Capa 2: gradiente inferior para reforzar H1, subtítulo y CTAs -->
+<div class="absolute inset-0 z-10 bg-gradient-to-t from-[rgba(3,12,9,0.78)] via-[rgba(3,12,9,0.18)] to-[rgba(3,12,9,0.45)]"></div>
+</div>
+<div class="relative z-20 max-w-container-max mx-auto w-full flex flex-col items-center text-center">
+<h1 class="font-headline-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-display-lg text-on-primary mb-4 text-shadow-hero">
+                Avemaría Villavicencio
+            </h1>
+<p class="font-body-lg text-body-lg text-surface-container-low max-w-2xl mb-2 text-shadow-hero">
+                Restaurante al aire libre para compartir buena comida, naturaleza y momentos especiales.
+            </p>
+<p class="font-body-md text-sm text-surface-container-high/80 mb-8 text-shadow-hero">
+                Consulta disponibilidad, horarios y reservas por WhatsApp.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
+<a class="w-full sm:w-auto px-8 py-4 bg-secondary text-surface font-label-md text-label-md rounded-full hover:bg-on-secondary-fixed-variant transition-colors flex items-center justify-center gap-2 shadow-lg" href="https://wa.me/573104964953?text=Hola,%20quiero%20reservar%20en%20Avemaría.%20Fecha:%20__%20Hora:%20__%20Número%20de%20personas:%20__%20¿Celebran%20algo%20especial?:%20__">
+<span class="material-symbols-outlined">calendar_month</span>
+                    Reservar por WhatsApp
+                </a>
+<a class="w-full sm:w-auto px-8 py-4 border border-tertiary-fixed-dim text-surface bg-primary/30 backdrop-blur-sm font-label-md text-label-md rounded-full hover:bg-primary/50 transition-colors flex items-center justify-center gap-2" href="#carta">
+<span class="material-symbols-outlined">menu_book</span>
+                    Ver carta
+                </a>
+<a class="w-full sm:w-auto px-8 py-4 text-surface font-label-md text-label-md rounded-full hover:bg-surface/10 transition-colors flex items-center justify-center gap-2" href="#ubicacion">
+<span class="material-symbols-outlined">directions</span>
+                    Cómo llegar
+                </a>
+</div>
+</div>
+</section>
+<!-- EXPERIENCIA SECTION -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface max-w-container-max mx-auto" id="experiencias">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Más que un restaurante, un plan para desconectarte</h2>
+<div class="gold-divider w-24 mx-auto mb-6"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                Descubre un refugio donde la maestría del fuego se encuentra con la serenidad de la naturaleza. Una experiencia culinaria diseñada para reconectar.
+            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Feature 1 -->
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.02)] border border-tertiary-fixed-dim/30">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined filled text-3xl">local_fire_department</span>
+</div>
+<h3 class="font-headline-md text-[20px] font-bold text-primary mb-3">Sabores a la parrilla</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Platos para disfrutar con calma, compartir y vivir una experiencia llena de sabor.</p>
+</div>
+<!-- Feature 2 -->
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.02)] border border-tertiary-fixed-dim/30">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined filled text-3xl">park</span>
+</div>
+<h3 class="font-headline-md text-[20px] font-bold text-primary mb-3">Entorno natural</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Un ambiente al aire libre para desconectarte de la rutina y disfrutar Villavicencio de otra manera.</p>
+</div>
+<!-- Feature 3 -->
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.02)] border border-tertiary-fixed-dim/30">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined filled text-3xl">groups</span>
+</div>
+<h3 class="font-headline-md text-[20px] font-bold text-primary mb-3">Familia y amigos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">El plan ideal para almuerzos, tardes especiales y encuentros memorables.</p>
+</div>
+<!-- Feature 4 -->
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.02)] border border-tertiary-fixed-dim/30">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined filled text-3xl">celebration</span>
+</div>
+<h3 class="font-headline-md text-[20px] font-bold text-primary mb-3">Celebraciones</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Cumpleaños, reuniones y fechas importantes en un espacio cálido y natural.</p>
+</div>
+</div>
+</section>
+<!-- CARTA DIGITAL SECTION -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low" id="carta">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12">
+<div class="mb-6 md:mb-0">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">Explora nuestra carta</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Encuentra opciones para compartir, platos fuertes, bebidas y sabores pensados para cada momento.</p>
+</div>
+<div class="flex gap-4">
+<a class="inline-flex items-center justify-center px-6 py-3 border-2 border-secondary text-secondary rounded-full font-label-md text-label-md hover:bg-secondary/10 transition-colors" href="#">
+                    Ver carta completa
+                </a>
+<a class="inline-flex items-center justify-center px-6 py-3 bg-secondary text-surface rounded-full font-label-md text-label-md hover:bg-on-secondary-fixed-variant transition-colors shadow-md" href="https://wa.me/573104964953?text=Hola,%20estoy%20viendo%20la%20carta%20de%20Avemaría%20y%20quiero%20consultar%20disponibilidad.">
+                    Consultar por WhatsApp
+                </a>
+</div>
+</div>
+<!-- Bento Grid Menu Preview -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Large Item -->
+<div class="md:col-span-2 relative rounded-2xl overflow-hidden aspect-video md:aspect-auto group cursor-pointer border border-tertiary-fixed-dim/30">
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors z-10"></div>
+<img alt="Plato pendiente por confirmar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A close-up, high-end food photography shot of a perfectly grilled, thick-cut Tomahawk steak resting on a rustic wooden board. The crust is charred and glistening, with coarse sea salt visible. The setting is softly lit with warm, ambient light typical of a luxury outdoor restaurant at evening. In the background, out of focus, are subtle hints of green foliage and a glass of robust red wine. Color palette leans into earthy terracotta, dark charcoal, and soft cream." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6HtXT4CSk7bxmFjAnXuFizjej-9XiudCyeqcS5zewn7LoM5FZPHjkheVnb9i2IYW4o3_Rsj3_H1ncpQON2AJLTR8Th2BaoEpdGYmvVbnnxOjFNmc9TvlH3h_P6_a1OjKqLAktZQDG5snZtVdNJWuP05HEfRu9FN7voBWMdIbl1_WWTnJUKZHvgichb3xQ74p2hJeMLmJeEcdw0EUE0MdTe1v1hAV6Fe-aMb_gt1J1tdbum5mChvfwzBKokmba3IeqaGq3Vtp_Ywo"/>
+<div class="absolute bottom-0 left-0 right-0 p-6 z-20 bg-gradient-to-t from-primary/90 to-transparent">
+<div class="flex justify-between items-end">
+<div>
+<span class="inline-block px-3 py-1 bg-primary text-tertiary-fixed font-label-md text-[10px] uppercase rounded-full mb-2 tracking-widest border border-tertiary-fixed/30">Plato Especial</span>
+<h3 class="font-headline-md text-[24px] font-bold text-surface mb-1">Carta pendiente por confirmar</h3>
+<p class="font-body-md text-surface-variant text-sm">Detalles pendientes por confirmar con el restaurante.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Vertical Items Stack -->
+<div class="flex flex-col gap-6">
+<div class="relative rounded-2xl overflow-hidden flex-1 group cursor-pointer border border-tertiary-fixed-dim/30 min-h-[200px]">
+<div class="absolute inset-0 bg-primary/30 group-hover:bg-primary/20 transition-colors z-10"></div>
+<img alt="Plato pendiente por confirmar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A stylish, overhead shot of a beautifully plated Punta de Anca (sirloin cap) steak sliced to reveal a perfect medium-rare pink center. The plate is artisanal ceramic in a soft cream tone, resting on a dark wood table. Accompaniments include vibrant green chimichurri and golden rustic potatoes. Lighting is natural but moody, emphasizing the high-end, tactile culinary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8CBV1CgUsuVOKf-tifLUec8xifIssP6uSF7x7PDS94CWEdOOdeTRxhYhHFYbbD3pAPJ23pTbVQJhFAYApAoZmIIITfulAwmTUbBEpnuXU4sLS0Ba2qQvMOt0fV82rhM0pCXpxgGUU_ldwYtHovzAgk_hKF6gT32DtKeffsgemVNRNDZWRWifF23o4JHjqQDl6D6AvzsPqSoPz0v3hJXaa6EYwFSonpq3B_TjW4myLve_7IOk2OOvk9hVDkmNsuP3PhgmAoc9KxTM"/>
+<div class="absolute bottom-0 left-0 right-0 p-5 z-20 bg-gradient-to-t from-primary/90 to-transparent">
+<span class="inline-block px-2 py-1 bg-primary-container/80 text-on-primary-container font-label-md text-[10px] uppercase rounded-full mb-1 tracking-widest backdrop-blur-sm">Para Compartir</span>
+<h3 class="font-headline-md text-[18px] font-bold text-surface">Carta pendiente</h3>
+</div>
+</div>
+<div class="relative rounded-2xl overflow-hidden flex-1 group cursor-pointer border border-tertiary-fixed-dim/30 min-h-[200px]">
+<div class="absolute inset-0 bg-primary/30 group-hover:bg-primary/20 transition-colors z-10"></div>
+<img alt="Bebidas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A sleek, close-up shot of a sophisticated craft cocktail in a heavy crystal tumbler. The drink is a deep amber color, garnished with a smoked rosemary sprig and an orange peel. It sits on a polished brass coaster atop a dark green marbled surface. The background is dark and moody with out-of-focus warm string lights. The overall aesthetic is luxurious, modern tactile, and inviting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPHCcPJncGECCXOjGXhWLysy-Zvp_a_dpiBN6tFIfUI8WtCFSLtfZKmYu2PRubfcAv0RSeWxnDc-7uoT40RwFu1pQWRiCweXsrM8DXkvuTXlOiK7U4PPcoWmHHHn8LC58aCx-Bwth_y8v0X9L0ldzqgD4QQpS8gbYkESH4m6V3KyplHUgt8Z9BA1KTEAtbmQ1LQVqLXktdOzEGFNrAYAWAcj4LeW87VapM1KgyPHUEgwysbpuUTVl3s9BIaoLeNDOZPFx8Yi7lZTs"/>
+<div class="absolute bottom-0 left-0 right-0 p-5 z-20 bg-gradient-to-t from-primary/90 to-transparent">
+<span class="inline-block px-2 py-1 bg-primary-container/80 text-on-primary-container font-label-md text-[10px] uppercase rounded-full mb-1 tracking-widest backdrop-blur-sm">Bebidas</span>
+<h3 class="font-headline-md text-[18px] font-bold text-surface">Carta pendiente</h3>
+</div>
+</div>
+</div>
+</div>
+<!-- Categories List -->
+<div class="flex flex-wrap gap-4 mt-8 justify-center">
+<button class="px-6 py-2 rounded-full border border-secondary bg-secondary/10 text-secondary font-label-md text-label-md">Parrilla</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant bg-surface text-on-surface font-label-md text-label-md hover:border-secondary hover:text-secondary transition-colors">Platos fuertes</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant bg-surface text-on-surface font-label-md text-label-md hover:border-secondary hover:text-secondary transition-colors">Entradas</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant bg-surface text-on-surface font-label-md text-label-md hover:border-secondary hover:text-secondary transition-colors">Para compartir</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant bg-surface text-on-surface font-label-md text-label-md hover:border-secondary hover:text-secondary transition-colors">Bebidas</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant bg-surface text-on-surface font-label-md text-label-md hover:border-secondary hover:text-secondary transition-colors">Postres</button>
+</div>
+</div>
+</section>
+<!-- EVENTOS SECTION -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface max-w-container-max mx-auto" id="eventos">
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-1/2">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-6">Celebra en Avemaría</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                Cumpleaños, reuniones familiares, fechas especiales y encuentros con amigos en un ambiente natural y cómodo.
+            </p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl border border-tertiary-fixed-dim/20">
+<span class="material-symbols-outlined text-secondary">cake</span>
+<span class="font-label-md text-on-surface font-semibold">Cumpleaños</span>
+</div>
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl border border-tertiary-fixed-dim/20">
+<span class="material-symbols-outlined text-secondary">family_restroom</span>
+<span class="font-label-md text-on-surface font-semibold">Reuniones familiares</span>
+</div>
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl border border-tertiary-fixed-dim/20">
+<span class="material-symbols-outlined text-secondary">favorite</span>
+<span class="font-label-md text-on-surface font-semibold">Fechas especiales</span>
+</div>
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl border border-tertiary-fixed-dim/20">
+<span class="material-symbols-outlined text-secondary">diversity_3</span>
+<span class="font-label-md text-on-surface font-semibold">Grupos y encuentros</span>
+</div>
+</div>
+<a class="inline-flex w-full sm:w-auto px-8 py-4 bg-secondary text-surface font-label-md text-label-md rounded-full hover:bg-on-secondary-fixed-variant transition-colors items-center justify-center gap-2 shadow-lg" href="https://wa.me/573104964953?text=Hola,%20quiero%20información%20para%20celebrar%20un%20evento%20en%20Avemaría.%20Fecha%20tentativa:%20__%20Número%20de%20personas:%20__%20Tipo%20de%20evento:%20__">
+<span class="material-symbols-outlined">celebration</span>
+                Consultar evento por WhatsApp
+            </a>
+</div>
+<div class="w-full md:w-1/2 rounded-2xl overflow-hidden border border-tertiary-fixed-dim/30 shadow-xl">
+<img alt="Celebraciones en Avemaría" class="w-full h-auto block" src="Foto/vive-avemaria.jpg"/>
+</div>
+</div>
+</section>
+<!-- REVIEWS SECTION -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low" id="resenas">
+<div class="max-w-container-max mx-auto text-center">
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Lo que dicen quienes nos visitan</h2>
+<div class="gold-divider w-24 mx-auto mb-12"></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Review 1 -->
+<div class="bg-surface p-8 rounded-2xl shadow-sm border border-tertiary-fixed-dim/20 flex flex-col items-center text-center">
+<div class="flex text-tertiary-fixed-dim mb-4">
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+</div>
+<p class="font-body-md italic text-on-surface-variant mb-6">"La comida en Avemaría es espectacular, con excelente sabor y muy buena presentación. La atención también fue sobresaliente; todo el personal fue muy amable, atento y siempre dispuesto a ayudar, lo que hace que la experiencia sea aún mejor."</p>
+<span class="font-label-md text-primary font-bold">Felipe Martínez</span>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface p-8 rounded-2xl shadow-sm border border-tertiary-fixed-dim/20 flex flex-col items-center text-center">
+<div class="flex text-tertiary-fixed-dim mb-4">
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+</div>
+<p class="font-body-md italic text-on-surface-variant mb-6">"La comida es deliciosa, y sin mencionar el ambiente, todo espectacular, gracias a la mesera Valentina por su atención."</p>
+<span class="font-label-md text-primary font-bold">Deicy Ortiz</span>
+</div>
+<!-- Review 3 -->
+<div class="bg-surface p-8 rounded-2xl shadow-sm border border-tertiary-fixed-dim/20 flex flex-col items-center text-center">
+<div class="flex text-tertiary-fixed-dim mb-4">
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+</div>
+<p class="font-body-md italic text-on-surface-variant mb-6">"La comida del restaurante italiano muy rica, el servicio excelente, los estaré visitando pronto, gracias."</p>
+<span class="font-label-md text-primary font-bold">Lina Vargas</span>
+</div>
+<!-- Review 4 -->
+<div class="bg-surface p-8 rounded-2xl shadow-sm border border-tertiary-fixed-dim/20 flex flex-col items-center text-center md:col-start-2">
+<div class="flex text-tertiary-fixed-dim mb-4">
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+</div>
+<p class="font-body-md italic text-on-surface-variant mb-6">"Excelente absolutamente todo, el servicio, la atención, la comida, recomiendo ir a la Litte Italy, la comida es deliciosa y la atención de Andrés es perfecta."</p>
+<span class="font-label-md text-primary font-bold">William Sánchez</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a class="px-8 py-3 bg-primary text-surface rounded-full font-label-md hover:bg-primary-container transition-colors" href="https://maps.app.goo.gl/CSLYTYc223iewn6D9" target="_blank" rel="noopener">Ver reseñas</a>
+<a class="px-8 py-3 border-2 border-primary text-primary rounded-full font-label-md hover:bg-primary/5 transition-colors" href="https://maps.app.goo.gl/CSLYTYc223iewn6D9" target="_blank" rel="noopener">Dejar reseña</a>
+</div>
+</div>
+</section>
+<!-- LOCATION SECTION -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface" id="ubicacion">
+<div class="max-w-container-max mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Estamos en Villavicencio</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                Encuentra fácilmente Avemaría y confirma tu visita antes de llegar.
+            </p>
+</div>
+<div class="flex flex-col lg:flex-row gap-8 bg-surface-container-low rounded-3xl overflow-hidden border border-tertiary-fixed-dim/30">
+<div class="w-full lg:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+<div class="mb-8">
+<div class="flex items-start gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h3 class="font-headline-md text-[20px] font-bold text-primary mb-1">Dirección</h3>
+<p class="font-body-md text-on-surface-variant">Km 2 vía antigua Restrepo, Villavicencio</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<h3 class="font-headline-md text-[20px] font-bold text-primary mb-1">Horarios</h3>
+<div class="font-body-md text-on-surface-variant">
+<p>Lunes: Cerrado</p>
+<p>Martes: 5:00 p.m. – 10:00 p.m.</p>
+<p>Miércoles y jueves: 4:00 p.m. – 10:00 p.m.</p>
+<p>Viernes y sábado: 12:00 m. – 10:30 p.m.</p>
+<p>Domingo: 12:00 m. – 10:00 p.m.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 mt-auto">
+<a class="px-6 py-3 bg-primary text-surface rounded-full font-label-md text-center hover:bg-primary-container transition-colors" href="https://maps.app.goo.gl/CSLYTYc223iewn6D9" target="_blank" rel="noopener">Abrir en Google Maps</a>
+<a class="px-6 py-3 border-2 border-secondary text-secondary rounded-full font-label-md text-center hover:bg-secondary/10 transition-colors" href="https://wa.me/573104964953?text=Hola,%20quiero%20visitar%20Avemaría.%20¿Me%20pueden%20confirmar%20ubicación%20y%20horario%20de%20atención?">Confirmar horario por WhatsApp</a>
+</div>
+</div>
+<div class="w-full lg:w-1/2 min-h-[400px] bg-surface-variant relative">
+<iframe title="Ubicación de Avemaría en Google Maps" class="w-full h-full min-h-[400px] border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Avemar%C3%ADa%20Villavicencio&amp;ll=4.1735671,-73.6431215&amp;z=16&amp;output=embed"></iframe>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ SECTION -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-headline-md text-headline-md text-primary text-center mb-12">Preguntas Frecuentes</h2>
+<div class="flex flex-col gap-4">
+<!-- FAQ Item -->
+<details class="group bg-surface p-6 rounded-xl border border-tertiary-fixed-dim/20 cursor-pointer">
+<summary class="flex justify-between items-center font-label-md text-[16px] text-primary font-bold list-none">
+                    ¿Se puede reservar?
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 font-body-md text-on-surface-variant">Pendiente por confirmar con el restaurante.</p>
+</details>
+<!-- FAQ Item -->
+<details class="group bg-surface p-6 rounded-xl border border-tertiary-fixed-dim/20 cursor-pointer">
+<summary class="flex justify-between items-center font-label-md text-[16px] text-primary font-bold list-none">
+                    ¿Dónde están ubicados?
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 font-body-md text-on-surface-variant">Pendiente por confirmar con el restaurante.</p>
+</details>
+<!-- FAQ Item -->
+<details class="group bg-surface p-6 rounded-xl border border-tertiary-fixed-dim/20 cursor-pointer">
+<summary class="flex justify-between items-center font-label-md text-[16px] text-primary font-bold list-none">
+                    ¿Cuáles son los horarios?
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 font-body-md text-on-surface-variant">Pendiente por confirmar con el restaurante.</p>
+</details>
+<!-- FAQ Item -->
+<details class="group bg-surface p-6 rounded-xl border border-tertiary-fixed-dim/20 cursor-pointer">
+<summary class="flex justify-between items-center font-label-md text-[16px] text-primary font-bold list-none">
+                    ¿Tienen parqueadero?
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 font-body-md text-on-surface-variant">Pendiente por confirmar con el restaurante.</p>
+</details>
+<!-- FAQ Item -->
+<details class="group bg-surface p-6 rounded-xl border border-tertiary-fixed-dim/20 cursor-pointer">
+<summary class="flex justify-between items-center font-label-md text-[16px] text-primary font-bold list-none">
+                    ¿Aceptan mascotas?
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 font-body-md text-on-surface-variant">Pendiente por confirmar con el restaurante.</p>
+</details>
+<!-- FAQ Item -->
+<details class="group bg-surface p-6 rounded-xl border border-tertiary-fixed-dim/20 cursor-pointer">
+<summary class="flex justify-between items-center font-label-md text-[16px] text-primary font-bold list-none">
+                    ¿Manejan eventos?
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 font-body-md text-on-surface-variant">Sí, manejamos eventos. Contáctanos por WhatsApp para más información.</p>
+</details>
+<!-- FAQ Item -->
+<details class="group bg-surface p-6 rounded-xl border border-tertiary-fixed-dim/20 cursor-pointer">
+<summary class="flex justify-between items-center font-label-md text-[16px] text-primary font-bold list-none">
+                    ¿Tienen domicilios?
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 font-body-md text-on-surface-variant">Pendiente por confirmar con el restaurante.</p>
+</details>
+<!-- FAQ Item -->
+<details class="group bg-surface p-6 rounded-xl border border-tertiary-fixed-dim/20 cursor-pointer">
+<summary class="flex justify-between items-center font-label-md text-[16px] text-primary font-bold list-none">
+                    ¿La carta está actualizada?
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 font-body-md text-on-surface-variant">Pendiente por confirmar con el restaurante.</p>
+</details>
+</div>
+</div>
+</section>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-inverse-surface shadow-[0_-4px_12px_rgba(0,0,0,0.1)] left-0 flex justify-around items-center py-3 px-2 md:hidden">
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-container font-bold bg-secondary-fixed/20 rounded-xl px-4 py-2 hover:bg-surface-container-high transition-all" href="https://wa.me/573104964953?text=Hola,%20quiero%20reservar%20en%20Avemaría.%20Fecha:%20__%20Hora:%20__%20Número%20de%20personas:%20__%20¿Celebran%20algo%20especial?:%20__">
+<span class="material-symbols-outlined mb-1 filled">calendar_month</span>
+<span class="font-label-md text-[12px]">Reservar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-lg" href="#carta">
+<span class="material-symbols-outlined mb-1">menu_book</span>
+<span class="font-label-md text-[12px]">Carta</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-lg" href="#ubicacion">
+<span class="material-symbols-outlined mb-1">location_on</span>
+<span class="font-label-md text-[12px]">Ubicación</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-lg" href="#resenas">
+<span class="material-symbols-outlined mb-1">star</span>
+<span class="font-label-md text-[12px]">Reseñas</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-surface-container-highest px-margin-mobile md:px-margin-desktop py-section-gap mb-16 md:mb-0">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-12 mb-8">
+<div class="md:col-span-1 flex flex-col gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-3xl">local_fire_department</span>
+<h2 class="font-headline-lg text-headline-md text-secondary-fixed tracking-tight">AVEMARÍA</h2>
+</div>
+<p class="font-body-md text-body-md text-on-primary/70 dark:text-on-surface/70">
+                    Restaurante al aire libre para compartir buena comida, naturaleza y momentos especiales.
+                </p>
+<div class="flex gap-4">
+<a aria-label="Instagram @avemaria_villavicencio" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary-fixed hover:text-primary transition-colors" href="https://www.instagram.com/avemaria_villavicencio/" target="_blank" rel="noopener">
+<span class="material-symbols-outlined">photo_camera</span>
+</a>
+<a aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary-fixed hover:text-primary transition-colors" href="https://wa.me/573104964953">
+<span class="material-symbols-outlined">chat</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-[16px] text-white font-bold mb-6">Contacto</h4>
+<ul class="flex flex-col gap-4">
+<li class="flex items-start gap-3 text-on-primary/70">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">location_on</span>
+<span class="font-body-md">Km 2 vía antigua Restrepo, Villavicencio</span>
+</li>
+<li class="flex items-start gap-3 text-on-primary/70">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">schedule</span>
+<span class="font-body-md">Mar 5–10 p.m. · Mié–Jue 4–10 p.m. · Vie–Sáb 12 m.–10:30 p.m. · Dom 12 m.–10 p.m. · Lun cerrado</span>
+</li>
+<li class="flex items-start gap-3 text-on-primary/70">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">phone_iphone</span>
+<span class="font-body-md">+57 310 4964953</span>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-[16px] text-white font-bold mb-6">Enlaces</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="font-body-md text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#carta">Carta</a></li>
+<li><a class="font-body-md text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#experiencias">Experiencias</a></li>
+<li><a class="font-body-md text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#eventos">Eventos</a></li>
+<li><a class="font-body-md text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#ubicacion">Ubicación</a></li>
+<li><a class="font-body-md text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#resenas">Reseñas</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-[16px] text-white font-bold mb-6">Acciones</h4>
+<ul class="flex flex-col gap-4">
+<li>
+<a class="inline-block px-6 py-2 bg-secondary text-surface rounded-full font-label-md hover:bg-on-secondary-fixed-variant transition-colors" href="https://wa.me/573104964953?text=Hola,%20quiero%20reservar%20en%20Avemaría.%20Fecha:%20__%20Hora:%20__%20Número%20de%20personas:%20__%20¿Celebran%20algo%20especial?:%20__">Reservar ahora</a>
+</li>
+<li>
+<a class="inline-block px-6 py-2 border border-white/20 text-white rounded-full font-label-md hover:bg-white/10 transition-colors mt-2" href="https://maps.app.goo.gl/CSLYTYc223iewn6D9" target="_blank" rel="noopener">Ver en Google Maps</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-sm text-on-primary/50 text-center md:text-left">
+                © 2024 Avemaría Villavicencio. Auténtica Parrilla &amp; Naturaleza.
+            </p>
+<div class="flex gap-6">
+<a class="font-body-md text-sm text-on-primary/50 hover:text-white transition-colors" href="#">Políticas de Privacidad</a>
+<a class="font-body-md text-sm text-on-primary/50 hover:text-white transition-colors" href="#">Términos y Condiciones</a>
+</div>
+</div>
+</footer>
+</body></html>
