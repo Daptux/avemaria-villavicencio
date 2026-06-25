@@ -5,11 +5,34 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Avemaría Villavicencio | Restaurante al aire libre, parrilla y celebraciones</title>
 <meta content="Visita Avemaría en Villavicencio: restaurante al aire libre para disfrutar buena comida, naturaleza, carta digital, ubicación y reservas por WhatsApp." name="description"/>
+<meta name="theme-color" content="#15100f"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Avemaría Villavicencio"/>
+<link rel="canonical" href="https://avemaria-psi.vercel.app/"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="apple-touch-icon" href="/favicon.svg"/>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Avemaría Villavicencio"/>
+<meta property="og:title" content="Avemaría Villavicencio | Restaurante al aire libre, parrilla y celebraciones"/>
+<meta property="og:description" content="Restaurante al aire libre en Villavicencio: parrilla, carta digital con precios, eventos y celebraciones. Consulta y reserva por WhatsApp."/>
+<meta property="og:url" content="https://avemaria-psi.vercel.app/"/>
+<meta property="og:image" content="https://avemaria-psi.vercel.app/assets/avemaria/hero/avemaria-aerea-hero.jpg"/>
+<meta property="og:image:alt" content="Vista aérea de Avemaría Villavicencio rodeado de naturaleza"/>
+<meta property="og:locale" content="es_CO"/>
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Avemaría Villavicencio | Restaurante al aire libre"/>
+<meta name="twitter:description" content="Parrilla, carta digital con precios, eventos y reservas por WhatsApp en Villavicencio."/>
+<meta name="twitter:image" content="https://avemaria-psi.vercel.app/assets/avemaria/hero/avemaria-aerea-hero.jpg"/>
+<!-- Preconnect a CDNs de fuentes (performance) -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <!-- VARIANTE: Immersive Visual Concept (alternativa a index.html, no lo reemplaza) -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Rye&amp;family=Bebas+Neue&amp;family=Pacifico&amp;family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Rye&amp;family=Bebas+Neue&amp;family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
   tailwind.config = {
     darkMode: "class",
@@ -290,7 +313,7 @@
         .totem__seal.is-multi .material-symbols-outlined { font-size: 27px; }
         .totem__name { font-size: 16px; font-weight: 700; line-height: 1.18; letter-spacing: .01em; text-shadow: 0 2px 8px rgba(0,0,0,0.95), 0 0 16px rgba(0,0,0,0.7); }
         .totem__hint { display: none; position: absolute; left: 50%; top: -14px; transform: translate(-50%, -100%) scale(calc(1 / var(--scale, 1))); transform-origin: 50% 100%; white-space: nowrap; padding: .4rem .8rem; border-radius: 9px; background: rgba(24,12,36,0.96); border: 1px solid rgba(25,199,212,0.5); color: #eaf7f8; font-size: 12.5px; font-weight: 600; letter-spacing: .02em; opacity: 0; pointer-events: none; transition: opacity .25s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.55); }
-        .totem__btn:hover, .totem__btn:focus-visible { outline: none; transform: translateY(-7px) scale(1.07); box-shadow: none; filter: brightness(1.12); }
+        .totem__btn:hover, .totem__btn:focus-visible { outline: none; transform: none; box-shadow: none; filter: brightness(1.12); }
         .totem.is-hover .totem__name, .totem__btn:hover .totem__name { color: #eaf7f8; text-shadow: 0 0 16px rgba(25,199,212,0.9), 0 2px 8px rgba(0,0,0,0.95); }
         .totem.is-hover { z-index: 60 !important; }
         .totem.is-hover .totem__hint { opacity: 1; }
@@ -309,8 +332,34 @@
         .seam-foliage { position: relative; height: 0; width: 100%; z-index: 30; pointer-events: none; transition: opacity .25s ease; }
         body.menu-open .seam-foliage { opacity: 0; visibility: hidden; }
         body.menu-open { overflow: hidden; }
+        /* Modal de "Agendar evento" */
+        .event-modal { position: fixed; inset: 0; z-index: 80; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+        .event-modal[hidden] { display: none; }
+        .event-modal__backdrop { position: absolute; inset: 0; background: rgba(2,4,3,0.9); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); opacity: 0; transition: opacity .3s ease; }
+        .event-modal.is-open .event-modal__backdrop { opacity: 1; }
+        .event-modal__card { position: relative; z-index: 1; width: min(540px, 100%); max-height: 92vh; overflow: auto; color-scheme: dark; border-radius: 1.25rem; background: linear-gradient(155deg, rgba(46,22,72,0.98), rgba(20,12,34,0.99)); border: 1px solid rgba(236,22,128,0.45); box-shadow: 0 40px 120px rgba(0,0,0,0.7), 0 0 90px rgba(91,42,134,0.3); padding: 1.75rem; transform: translateY(24px) scale(.96); opacity: 0; transition: transform .4s cubic-bezier(.2,.85,.25,1), opacity .3s ease; }
+        .event-modal.is-open .event-modal__card { transform: none; opacity: 1; }
+        .event-modal__close { position: absolute; top: .75rem; right: .75rem; width: 40px; height: 40px; border-radius: 9999px; background: rgba(0,0,0,0.4); color: #f8f3ec; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.15); cursor: pointer; }
+        .event-modal__title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: #FFF3D6; margin-bottom: .25rem; padding-right: 2.5rem; }
+        .event-modal__sub { color: rgba(255,243,214,0.8); font-size: 14px; margin-bottom: 1.25rem; }
+        .event-form { display: flex; flex-direction: column; gap: .9rem; }
+        .event-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+        .event-field { display: flex; flex-direction: column; gap: .3rem; }
+        .event-field label { font-size: 12px; font-weight: 600; letter-spacing: .03em; color: rgba(25,199,212,0.9); text-transform: uppercase; }
+        .event-field input, .event-field select, .event-field textarea { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.18); border-radius: 10px; padding: .65rem .8rem; color: #FFF3D6; font-size: 15px; font-family: inherit; width: 100%; transition: border-color .2s ease, background .2s ease; }
+        .event-field input:focus, .event-field select:focus, .event-field textarea:focus { outline: none; border-color: #EC1680; background: rgba(255,255,255,0.1); }
+        .event-field select option { color: #15100f; }
+        .event-field textarea { resize: vertical; min-height: 70px; }
+        .event-submit { margin-top: .4rem; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .9rem 1.4rem; border-radius: 9999px; background: linear-gradient(180deg, #EC1680, #C80F6B); color: #fff; font-weight: 700; font-size: 15px; border: none; cursor: pointer; box-shadow: 0 12px 30px rgba(236,22,128,0.35); transition: filter .2s ease, transform .2s ease; }
+        .event-submit:hover { filter: brightness(1.08); transform: translateY(-1px); }
+        .event-success { text-align: center; padding: 1.5rem .5rem; display: flex; flex-direction: column; align-items: center; gap: .6rem; }
+        .event-success[hidden] { display: none; }
+        .event-success .material-symbols-outlined { font-size: 56px; color: #19C7D4; }
+        .event-success h4 { font-family: 'Playfair Display', serif; font-size: 22px; color: #FFF3D6; }
+        .event-success p { color: rgba(255,243,214,0.82); font-size: 14px; max-width: 32ch; }
+        @media (max-width: 480px) { .event-grid { grid-template-columns: 1fr; } .event-modal__card { padding: 1.4rem 1.1rem; } }
         /* Botón Instagram estático (solo visible al inicio, no sticky) */
-        .ig-top { position: absolute; top: .9rem; right: 4.25rem; z-index: 60; display: inline-flex; align-items: center; gap: .5rem; padding: .5rem; border-radius: 9999px; background: rgba(20,16,15,0.45); border: 1px solid rgba(255,255,255,0.28); color: #fff; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); text-shadow: 0 1px 4px rgba(0,0,0,.6); transition: background .25s ease, transform .2s ease, border-color .25s ease; }
+        .ig-top { position: absolute; top: .9rem; right: 1.1rem; z-index: 60; display: inline-flex; align-items: center; gap: .5rem; padding: .5rem; border-radius: 9999px; background: rgba(20,16,15,0.45); border: 1px solid rgba(255,255,255,0.28); color: #fff; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); text-shadow: 0 1px 4px rgba(0,0,0,.6); transition: background .25s ease, transform .2s ease, border-color .25s ease; }
         .ig-top:hover { background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf); border-color: transparent; transform: translateY(-1px); color: #fff; }
         .ig-top svg { width: 20px; height: 20px; flex: 0 0 auto; }
         .ig-top__handle { display: none; font-size: 13px; font-weight: 600; letter-spacing: .01em; }
@@ -556,9 +605,42 @@
     </style>
 <style>
     body { min-height: max(884px, 100dvh); }
+    /* Foco visible para navegación por teclado (accesibilidad) */
+    a:focus-visible, button:focus-visible, [tabindex]:focus-visible, summary:focus-visible { outline: 2px solid #19C7D4; outline-offset: 2px; border-radius: 6px; }
   </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Avemaría Villavicencio",
+  "description": "Restaurante al aire libre en Villavicencio: parrilla, asado, picnic, eventos y celebraciones.",
+  "url": "https://avemaria-psi.vercel.app/",
+  "image": "https://avemaria-psi.vercel.app/assets/avemaria/hero/avemaria-aerea-hero.jpg",
+  "servesCuisine": ["Parrilla", "Comida llanera", "Colombiana"],
+  "priceRange": "$$",
+  "telephone": "+573104964953",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Km 2 vía antigua Restrepo",
+    "addressLocality": "Villavicencio",
+    "addressRegion": "Meta",
+    "addressCountry": "CO"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 4.1735671,
+    "longitude": -73.6431215
+  },
+  "hasMenu": "https://avemaria-psi.vercel.app/#carta",
+  "acceptsReservations": "https://wa.me/573104964953",
+  "sameAs": ["https://www.instagram.com/avemaria_villavicencio/"]
+}
+</script>
 </head>
 <body class="bg-[#15100f] text-surface font-body-md text-body-md antialiased pb-20 md:pb-0">
+<noscript>
+<div style="background:#5B2A86;color:#FFF3D6;text-align:center;padding:.7rem 1rem;font-family:Montserrat,sans-serif;font-size:14px;line-height:1.4">Para ver la carta completa y agendar eventos, activa JavaScript en tu navegador. También puedes escribirnos por <a href="https://wa.me/573104964953" style="color:#FFD51E;font-weight:700">WhatsApp</a>.</div>
+</noscript>
 <!-- TopAppBar (glass oscuro) -->
 <!-- Botón Instagram: estático en la primera sección (no sticky, se va al hacer scroll) -->
 <a href="https://www.instagram.com/avemaria_villavicencio/" target="_blank" rel="noopener" aria-label="Instagram de AveMaría Villavicencio" class="ig-top">
@@ -581,10 +663,6 @@
 <a class="hidden md:flex items-center gap-2 px-6 py-2.5 bg-primary text-surface rounded-full hover:bg-[#4a2270] transition-colors scale-95 duration-200 shadow-md" href="https://wa.me/573104964953?text=Hola,%20quiero%20reservar%20en%20Avemaría.%20Fecha:%20__%20Hora:%20__%20Número%20de%20personas:%20__%20¿Celebran%20algo%20especial?:%20__">
 <span class="font-label-md text-[18px]">Reservar</span>
 </a>
-<!-- Mobile Menu Trigger -->
-<button type="button" aria-label="Abrir menú" class="md:hidden text-surface p-2">
-<span class="material-symbols-outlined text-2xl">menu</span>
-</button>
 </div>
 </header>
 <!-- HERO SECTION -->
@@ -628,8 +706,8 @@
 <section class="altar py-section-gap px-margin-mobile md:px-margin-desktop" id="carta">
 <div class="altar__atmos" aria-hidden="true"></div>
 <div class="altar__smoke" aria-hidden="true"></div>
-<video class="altar-bg-video" id="fogataVideo" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-<source src="assets/avemaria/carta-bg-2.mp4" type="video/mp4"/>
+<video class="altar-bg-video" id="fogataVideo" muted loop playsinline preload="none" aria-hidden="true">
+<source data-src="assets/avemaria/carta-bg-4k.mp4" type="video/mp4"/>
 </video>
 <div class="altar-bg-scrim" aria-hidden="true"></div>
 <div class="max-w-container-max mx-auto relative z-[2]">
@@ -679,10 +757,10 @@
 </figure>
 </div>
 <div class="celebra-cta">
-<a class="inline-flex px-6 py-3 bg-primary text-surface font-label-md text-sm rounded-full hover:bg-[#4a2270] transition-colors items-center justify-center gap-2 shadow-lg" href="https://wa.me/573104964953?text=Hola,%20quiero%20información%20para%20celebrar%20un%20evento%20en%20Avemaría.%20Fecha%20tentativa:%20__%20Número%20de%20personas:%20__%20Tipo%20de%20evento:%20__">
+<button type="button" id="eventOpen" class="inline-flex px-6 py-3 bg-primary text-surface font-label-md text-sm rounded-full hover:bg-[#4a2270] transition-colors items-center justify-center gap-2 shadow-lg">
 <span class="material-symbols-outlined">celebration</span>
-                Consultar evento por WhatsApp
-            </a>
+                Agendar evento
+            </button>
 </div>
 </section>
 <!-- REVIEWS SECTION — El Libro de Visitas (carátula + pestañas, full-bleed) -->
@@ -864,6 +942,71 @@
 </div>
 </div>
 </footer>
+<!-- Modal: Agendar evento (formulario) -->
+<div class="event-modal" id="eventModal" hidden>
+<div class="event-modal__backdrop" id="eventBackdrop"></div>
+<div class="event-modal__card" role="dialog" aria-modal="true" aria-labelledby="eventTitle">
+<button class="event-modal__close" id="eventClose" type="button" aria-label="Cerrar"><span class="material-symbols-outlined">close</span></button>
+<h3 id="eventTitle" class="event-modal__title">Agendar evento</h3>
+<p class="event-modal__sub">Cuéntanos los detalles y nos pondremos en contacto contigo para confirmar tu evento en AveMaría.</p>
+<form id="eventForm" class="event-form">
+<div class="event-field">
+<label for="ev-nombre">Nombre completo *</label>
+<input id="ev-nombre" name="nombre" type="text" required maxlength="80" autocomplete="name" placeholder="Tu nombre"/>
+</div>
+<div class="event-grid">
+<div class="event-field">
+<label for="ev-tel">Teléfono / WhatsApp *</label>
+<input id="ev-tel" name="telefono" type="tel" required maxlength="20" inputmode="tel" autocomplete="tel" placeholder="3xx xxx xxxx"/>
+</div>
+<div class="event-field">
+<label for="ev-email">Correo electrónico</label>
+<input id="ev-email" name="email" type="email" maxlength="120" autocomplete="email" placeholder="tucorreo@ejemplo.com"/>
+</div>
+</div>
+<div class="event-grid">
+<div class="event-field">
+<label for="ev-tipo">Tipo de evento *</label>
+<select id="ev-tipo" name="tipo" required>
+<option value="" disabled selected>Selecciona…</option>
+<option>Cumpleaños</option>
+<option>Reunión familiar</option>
+<option>Aniversario / Fecha especial</option>
+<option>Evento empresarial</option>
+<option>Grupo de amigos / Parche</option>
+<option>Despedida / Grado</option>
+<option>Otro</option>
+</select>
+</div>
+<div class="event-field">
+<label for="ev-personas">N.º de personas *</label>
+<input id="ev-personas" name="personas" type="number" min="1" max="2000" required inputmode="numeric" placeholder="Ej. 20"/>
+</div>
+</div>
+<div class="event-grid">
+<div class="event-field">
+<label for="ev-fecha">Fecha del evento *</label>
+<input id="ev-fecha" name="fecha" type="date" required/>
+</div>
+<div class="event-field">
+<label for="ev-hora">Hora aprox.</label>
+<input id="ev-hora" name="hora" type="time"/>
+</div>
+</div>
+<div class="event-field">
+<label for="ev-msg">Detalles adicionales</label>
+<textarea id="ev-msg" name="mensaje" rows="3" maxlength="600" placeholder="Decoración, torta, presupuesto, restricciones alimentarias, etc."></textarea>
+</div>
+<button type="submit" class="event-submit"><span class="material-symbols-outlined">send</span> Enviar solicitud</button>
+</form>
+<div class="event-success" id="eventSuccess" hidden>
+<span class="material-symbols-outlined">check_circle</span>
+<h4>¡Solicitud enviada!</h4>
+<p>Gracias por escribirnos. Nos pondremos en contacto contigo muy pronto para confirmar los detalles de tu evento.</p>
+<button type="button" class="event-submit" id="eventDone">Listo</button>
+</div>
+</div>
+</div>
 <!-- Panel de categoría: bandeja servida (nivel raíz para apilarse sobre el header) -->
 <div class="menu-overlay" id="menuOverlay" hidden>
 <div class="menu-overlay__backdrop" id="menuBackdrop"></div>
@@ -924,11 +1067,23 @@
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var isDesktop = !window.matchMedia || window.matchMedia('(min-width: 768px)').matches;
 
-    // Núcleo en video: pausar si el usuario prefiere menos movimiento
+    // Video de fondo: carga diferida (lazy) para no penalizar la carga inicial.
+    // El archivo (4K, ~10MB) sólo se descarga cuando la sección de la carta se acerca al viewport.
     var fogataVideo = document.getElementById('fogataVideo');
     if (fogataVideo) {
-      if (reduce) { fogataVideo.removeAttribute('autoplay'); fogataVideo.pause(); }
-      else { var p = fogataVideo.play(); if (p && p.catch) { p.catch(function () {}); } }
+      var fvSource = fogataVideo.querySelector('source');
+      var fvLoaded = false;
+      var loadFogata = function () {
+        if (fvLoaded) return; fvLoaded = true;
+        if (fvSource && fvSource.dataset.src) { fvSource.src = fvSource.dataset.src; fogataVideo.load(); }
+        if (!reduce) { var p = fogataVideo.play(); if (p && p.catch) { p.catch(function () {}); } }
+      };
+      if ('IntersectionObserver' in window) {
+        var vio = new IntersectionObserver(function (ents) {
+          ents.forEach(function (x) { if (x.isIntersecting) { loadFogata(); vio.disconnect(); } });
+        }, { rootMargin: '400px 0px' });
+        vio.observe(altar);
+      } else { loadFogata(); }
     }
 
     function esc(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
@@ -999,8 +1154,8 @@
       }
     });
 
-    // Parallax diferencial de escena (sólo desktop + movimiento permitido)
-    if (!reduce && isDesktop && world && scene) {
+    // Parallax diferencial de escena — DESACTIVADO (los sellos no deben seguir el cursor)
+    if (false && !reduce && isDesktop && world && scene) {
       var coreEl = altar.querySelector('.altar__core');
       var raf = null, px = 0, py = 0;
       scene.addEventListener('mousemove', function (e) {
@@ -1230,6 +1385,48 @@
     });
 
     open(0); // abre la primera por defecto para que el libro nunca quede vacío
+  })();
+</script>
+<script>
+  // Modal "Agendar evento"
+  (function () {
+    var openBtn = document.getElementById('eventOpen');
+    var modal = document.getElementById('eventModal');
+    if (!openBtn || !modal) return;
+    var backdrop = document.getElementById('eventBackdrop');
+    var closeBtn = document.getElementById('eventClose');
+    var form = document.getElementById('eventForm');
+    var success = document.getElementById('eventSuccess');
+    var doneBtn = document.getElementById('eventDone');
+    var card = modal.querySelector('.event-modal__card');
+    var lastFocus = null;
+    function openModal() {
+      lastFocus = document.activeElement;
+      form.hidden = false; success.hidden = true;
+      modal.hidden = false;
+      document.body.classList.add('menu-open');
+      requestAnimationFrame(function () { modal.classList.add('is-open'); });
+      var first = document.getElementById('ev-nombre'); if (first) first.focus();
+    }
+    function closeModal() {
+      modal.classList.remove('is-open');
+      document.body.classList.remove('menu-open');
+      setTimeout(function () { modal.hidden = true; }, 300);
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+    if (doneBtn) doneBtn.addEventListener('click', function () { form.reset(); closeModal(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var data = Object.fromEntries(new FormData(form).entries());
+      // TODO: conectar con Google Sheets (Apps Script / API). Enviar `data` aquí.
+      console.log('Solicitud de evento:', data);
+      form.hidden = true; success.hidden = false;
+      if (card) card.scrollTop = 0;
+    });
   })();
 </script>
 </body></html>
