@@ -31,7 +31,9 @@ Sitio **estático de un solo archivo** (`immersive.html`): HTML + Tailwind CSS v
 - **Foco visible** global para teclado (`:focus-visible` turquesa) en enlaces, botones y elementos focusables.
 - **Eliminado control muerto:** el botón hamburguesa no tenía acción (la navegación móvil ya la da la barra inferior fija). Se removió y se reubicó el botón de Instagram al borde.
 - **`<noscript>`** de degradación elegante (carta/eventos requieren JS) con CTA a WhatsApp.
-- Imágenes con `alt`; video decorativo con `aria-hidden`; modales con `role="dialog"`/`aria-modal`; labels asociadas a inputs.
+- Imágenes con `alt` (las decorativas con `alt=""` + contenedor `aria-hidden`); video decorativo con `aria-hidden`; modales con `role="dialog"`/`aria-modal`; labels asociadas a inputs.
+- **Trampa de foco (focus trap)** en los modales de carta y de eventos: `Tab`/`Shift+Tab` ciclan dentro del modal y no se escapan al fondo. Cierre con `Esc`, backdrop y botón.
+- **Estados de error de navegación:** `404.html` branded (status 404, `noindex`) con CTA a inicio y a WhatsApp.
 
 ### Performance
 - **Lazy-load del video de fondo 4K (~10 MB):** ya no se descarga en la carga inicial; se carga con `IntersectionObserver` sólo cuando la sección de la carta se acerca (`rootMargin 400px`). `preload="none"`.

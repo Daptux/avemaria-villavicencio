@@ -1291,7 +1291,18 @@
       setTimeout(function () { overlay.hidden = true; content.innerHTML = ''; }, 350);
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
-    function onKey(e) { if (e.key === 'Escape') closeCat(); }
+    var plateEl = document.getElementById('menuPlate');
+    function onKey(e) {
+      if (e.key === 'Escape') { closeCat(); return; }
+      if (e.key === 'Tab' && plateEl) {
+        var f = plateEl.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),select,textarea,[tabindex]:not([tabindex="-1"])');
+        f = Array.prototype.filter.call(f, function (el) { return el.offsetParent !== null; });
+        if (!f.length) return;
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
+        else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
+      }
+    }
     if (closeBtn) closeBtn.addEventListener('click', closeCat);
     if (backdrop) backdrop.addEventListener('click', closeCat);
     if (content) content.addEventListener('click', function (e) {
@@ -1421,7 +1432,19 @@
     closeBtn.addEventListener('click', closeModal);
     backdrop.addEventListener('click', closeModal);
     if (doneBtn) doneBtn.addEventListener('click', function () { form.reset(); closeModal(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+    function trapFocus(container, e) {
+      var f = container.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),select,textarea,[tabindex]:not([tabindex="-1"])');
+      f = Array.prototype.filter.call(f, function (el) { return el.offsetParent !== null; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
+      else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
+    }
+    document.addEventListener('keydown', function (e) {
+      if (modal.hidden) return;
+      if (e.key === 'Escape') { closeModal(); return; }
+      if (e.key === 'Tab' && card) trapFocus(card, e);
+    });
     var waFallback = document.getElementById('eventWaFallback');
     form.addEventListener('submit', function (e) {
       e.preventDefault();
