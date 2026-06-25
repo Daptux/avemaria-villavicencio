@@ -39,7 +39,8 @@ Sitio **estático de un solo archivo** (`immersive.html`): HTML + Tailwind CSS v
 - **Lazy-load del video de fondo 4K (~10 MB):** ya no se descarga en la carga inicial; se carga con `IntersectionObserver` sólo cuando la sección de la carta se acerca (`rootMargin 400px`). `preload="none"`.
 - **Fuentes:** removidas **Pacifico** (clase `.font-script` sin uso) y el webfont **DM Sans** (sólo fallback redundante de Montserrat) → 2 descargas menos, sin cambio visual.
 - **`preconnect`** a `fonts.googleapis.com` y `fonts.gstatic.com`.
-- Imágenes del menú optimizadas previamente a ~1000px / JPEG (~140–210 KB c/u); hero con `fetchpriority="high"`; mapa en `<iframe loading="lazy">`.
+- Imágenes del menú optimizadas previamente a ~1000px / JPEG (~140–210 KB c/u); hero con `fetchpriority="high"` (1440×810, 345 KB); mapa en `<iframe loading="lazy">`.
+- **Limpieza de assets:** removidos **15 archivos huérfanos (~29 MB)** de `assets/avemaria/` (versiones viejas de video y de las lianas que la página ya no referencia). Verificado que 0 assets en uso se perdieron. Recuperables desde el historial de git / carpetas fuente.
 
 ## Verificación en producción (curl)
 - `200 OK` en `/`, `/sitemap.xml`, `/favicon.svg`, `/assets/...`.
