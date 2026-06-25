@@ -357,6 +357,8 @@
         .event-success .material-symbols-outlined { font-size: 56px; color: #19C7D4; }
         .event-success h4 { font-family: 'Playfair Display', serif; font-size: 22px; color: #FFF3D6; }
         .event-success p { color: rgba(255,243,214,0.82); font-size: 14px; max-width: 32ch; }
+        .event-wa-fallback { display: inline-flex; align-items: center; gap: .35rem; color: #19C7D4; font-size: 13.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+        .event-wa-fallback .material-symbols-outlined { font-size: 18px; }
         @media (max-width: 480px) { .event-grid { grid-template-columns: 1fr; } .event-modal__card { padding: 1.4rem 1.1rem; } }
         /* Botón Instagram estático (solo visible al inicio, no sticky) */
         .ig-top { position: absolute; top: .9rem; right: 1.1rem; z-index: 60; display: inline-flex; align-items: center; gap: .5rem; padding: .5rem; border-radius: 9999px; background: rgba(20,16,15,0.45); border: 1px solid rgba(255,255,255,0.28); color: #fff; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); text-shadow: 0 1px 4px rgba(0,0,0,.6); transition: background .25s ease, transform .2s ease, border-color .25s ease; }
@@ -1001,8 +1003,9 @@
 </form>
 <div class="event-success" id="eventSuccess" hidden>
 <span class="material-symbols-outlined">check_circle</span>
-<h4>¡Solicitud enviada!</h4>
-<p>Gracias por escribirnos. Nos pondremos en contacto contigo muy pronto para confirmar los detalles de tu evento.</p>
+<h4>¡Tu solicitud está lista!</h4>
+<p>Te abrimos <b>WhatsApp</b> con todos los datos de tu evento. Solo pulsa enviar y te confirmamos los detalles muy pronto.</p>
+<a id="eventWaFallback" class="event-wa-fallback" href="https://wa.me/573104964953" target="_blank" rel="noopener"><span class="material-symbols-outlined" aria-hidden="true">forum</span> ¿No se abrió? Abrir WhatsApp</a>
 <button type="button" class="event-submit" id="eventDone">Listo</button>
 </div>
 </div>
@@ -1419,11 +1422,25 @@
     backdrop.addEventListener('click', closeModal);
     if (doneBtn) doneBtn.addEventListener('click', function () { form.reset(); closeModal(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+    var waFallback = document.getElementById('eventWaFallback');
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var data = Object.fromEntries(new FormData(form).entries());
-      // TODO: conectar con Google Sheets (Apps Script / API). Enviar `data` aquí.
-      console.log('Solicitud de evento:', data);
+      // Entrega de la solicitud al WhatsApp del restaurante (canal actual).
+      // Más adelante puede reemplazarse/duplicarse a Google Sheets reutilizando `data`.
+      var lines = [
+        'Hola, quiero *agendar un evento* en AveMaría:', '',
+        'Nombre: ' + (data.nombre || ''),
+        'Teléfono: ' + (data.telefono || ''),
+        (data.email ? 'Correo: ' + data.email : ''),
+        'Tipo de evento: ' + (data.tipo || ''),
+        'N.º de personas: ' + (data.personas || ''),
+        'Fecha: ' + (data.fecha || '') + (data.hora ? ' · ' + data.hora : ''),
+        (data.mensaje ? 'Detalles: ' + data.mensaje : '')
+      ].filter(Boolean);
+      var url = 'https://wa.me/573104964953?text=' + encodeURIComponent(lines.join('\n'));
+      if (waFallback) waFallback.href = url;
+      try { window.open(url, '_blank', 'noopener'); } catch (err) { /* el fallback queda disponible */ }
       form.hidden = true; success.hidden = false;
       if (card) card.scrollTop = 0;
     });

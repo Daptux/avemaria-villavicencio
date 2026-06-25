@@ -25,7 +25,7 @@ Sitio **estático de un solo archivo** (`immersive.html`): HTML + Tailwind CSS v
 ### Seguridad (`vercel.json`)
 - Headers: `X-Content-Type-Options: nosniff`, `X-Frame-Options: SAMEORIGIN`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy` (cámara/micrófono/geo/topics deshabilitados), `Strict-Transport-Security`.
 - `Cache-Control` para `/assets/*` (1 día + `stale-while-revalidate`) y favicon.
-- **Formulario de eventos:** validación nativa (`required`, tipos) + `maxlength`/`max` en todos los campos para limitar inputs.
+- **Formulario de eventos (flujo cerrado de punta a punta):** validación nativa (`required`, tipos) + `maxlength`/`max`. Al enviar, **entrega la solicitud al WhatsApp del restaurante** con todos los campos estructurados (nombre, teléfono, correo, tipo, personas, fecha/hora, detalles), abre WhatsApp en una pestaña nueva y muestra pantalla de confirmación con **enlace de respaldo** por si el navegador bloquea el pop-up. Reemplazable/duplicable a Google Sheets más adelante reutilizando el objeto `data`.
 
 ### Accesibilidad
 - **Foco visible** global para teclado (`:focus-visible` turquesa) en enlaces, botones y elementos focusables.
@@ -45,7 +45,7 @@ Sitio **estático de un solo archivo** (`immersive.html`): HTML + Tailwind CSS v
 - `robots.txt` y `sitemap.xml` accesibles; `og:image`, `twitter:card`, JSON-LD `Restaurant`, favicon y `data-src` (video lazy) presentes en el HTML servido.
 
 ## Riesgos restantes / próximos pasos
-1. **Formulario de eventos sin backend:** hoy valida y muestra confirmación, pero **los datos no se envían a ningún destino** (hay un `TODO` marcado). Pendiente conectar a Google Sheets (Apps Script) — acordado con el cliente.
+1. **Formulario de eventos:** flujo **cerrado de punta a punta** vía WhatsApp (sin backend ni credenciales). *Mejora opcional futura:* duplicar la entrega a **Google Sheets** (Apps Script) para tener un registro centralizado además del chat — no bloqueante.
 2. **Tailwind por CDN:** funciona, pero en producción ideal compilar Tailwind a un CSS estático (menos JS en cliente, sin advertencia de consola, mejor Web Vitals). Cambio mayor (introduce build) — recomendado a futuro.
 3. **CSP (Content-Security-Policy):** no se añadió una CSP estricta para no arriesgar romper el sitio (Tailwind CDN usa estilos/eval inline + Google Fonts + iframe de Maps). Recomendado definirla y **probarla** antes de activar.
 4. **Video 4K vs. peso:** a pedido del cliente se mantiene 4K (~10 MB); mitigado con lazy-load. Si se prioriza velocidad en datos móviles, existe la opción de servir una versión 1080p más liviana.
