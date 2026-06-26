@@ -47,13 +47,13 @@ Sitio **estático de un solo archivo** (`immersive.html`): HTML + Tailwind CSS v
 - Headers de seguridad presentes en `/`.
 - `robots.txt` y `sitemap.xml` accesibles; `og:image`, `twitter:card`, JSON-LD `Restaurant`, favicon y `data-src` (video lazy) presentes en el HTML servido.
 
-## Flujo de "Agendar evento" (captura de eventos)
-- **Funciona de punta a punta hoy** vía **WhatsApp**: el formulario valida, arma un mensaje estructurado con todos los campos y abre el chat del restaurante (+57 310 496 4953) prellenado; la pantalla de éxito ofrece además un enlace de respaldo a WhatsApp.
-- **Google Sheets cableado y listo para activar:** el handler ya hace `fetch` (POST `no-cors`) a una constante `SHEETS_ENDPOINT`. Sólo falta **pegar una URL**. Cuando se activa, cada solicitud se guarda como fila en la hoja y la pantalla de éxito cambia el mensaje a "Solicitud enviada".
-- **Razón documentada por la que no queda 100% autoactivado:** publicar el Apps Script como *Web App* requiere **la cuenta de Google del cliente** (autenticación/credencial externa que el desarrollador no puede asumir). El código y los pasos quedan provistos en [`google-apps-script.gs`](google-apps-script.gs); es un paso de ~5 minutos del cliente.
+## Flujo de "Agendar evento" (captura de eventos) — ✅ CERRADO DE PUNTA A PUNTA
+- **Registro centralizado en Google Sheets ACTIVO y verificado:** el formulario hace `POST` a `SHEETS_ENDPOINT` (Apps Script Web App del cliente); cada solicitud se guarda como **fila nueva en la hoja**. Verificado end-to-end con un envío real: `POST → doPost → appendRow → {"ok":true}` (HTTP 200).
+- **WhatsApp** queda como **canal de respaldo** (enlace en la pantalla de confirmación).
+- Código del receptor y pasos: [`google-apps-script.gs`](google-apps-script.gs).
 
 ## Riesgos restantes / próximos pasos
-1. **Formulario de eventos:** flujo **cerrado de punta a punta** vía WhatsApp + **Google Sheets ya cableado** (sólo falta pegar la URL del Apps Script del cliente, ver `google-apps-script.gs`). Activación = paso de ~5 min del cliente con su cuenta de Google — no bloqueante.
+1. **Formulario de eventos:** ✅ **cerrado de punta a punta** — registra en Google Sheets (verificado) + WhatsApp de respaldo. Sin pendientes.
 2. **Tailwind por CDN:** funciona, pero en producción ideal compilar Tailwind a un CSS estático (menos JS en cliente, sin advertencia de consola, mejor Web Vitals). Cambio mayor (introduce build) — recomendado a futuro.
 3. **CSP (Content-Security-Policy):** no se añadió una CSP estricta para no arriesgar romper el sitio (Tailwind CDN usa estilos/eval inline + Google Fonts + iframe de Maps). Recomendado definirla y **probarla** antes de activar.
 4. **Video 4K vs. peso:** a pedido del cliente se mantiene 4K (~10 MB); mitigado con lazy-load. Si se prioriza velocidad en datos móviles, existe la opción de servir una versión 1080p más liviana.

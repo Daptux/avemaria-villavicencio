@@ -19,8 +19,8 @@
 | 12 | Seguridad / privacidad / cumplimiento | ✅ | Headers (HSTS, nosniff, X-Frame, Referrer, Permissions), límites de formulario, sin claims engañosos |
 | 13 | Resumen final entregado | ✅ | `AUDIT.md` + este checklist + commits en GitHub |
 
-## Excepción técnica documentada (cláusula de VALIDACIÓN del objetivo)
-**Registro centralizado en Google Sheets** del formulario de eventos: el código está **cableado y probado** (POST a `SHEETS_ENDPOINT`), pero su activación exige **la cuenta de Google del cliente** (publicar un Apps Script como Web App). Es una credencial externa que el desarrollador no puede asumir por el cliente → frontera técnica, no omisión. El flujo **igualmente funciona de punta a punta** por WhatsApp. Pasos de activación: [`google-apps-script.gs`](google-apps-script.gs).
+## Flujo de captura de eventos — ✅ cerrado de punta a punta
+**Registro centralizado en Google Sheets ACTIVO y verificado:** el formulario hace `POST` al Apps Script Web App del cliente y cada solicitud se guarda como **fila en la hoja**. Comprobado con un envío real: `POST → doPost → appendRow → {"ok":true}` (HTTP 200). **WhatsApp** queda como canal de respaldo.
 
 ## Verificado en producción (curl)
 `200` en home/sitemap/favicon/assets · headers de seguridad presentes · `robots.txt`/`sitemap.xml` accesibles · `og:image`, `twitter:card`, JSON-LD `Restaurant`, favicon y `data-src` (video lazy) presentes en el HTML servido · 404 personalizado con status 404.
