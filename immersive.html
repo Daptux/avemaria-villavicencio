@@ -1003,9 +1003,9 @@
 </form>
 <div class="event-success" id="eventSuccess" hidden>
 <span class="material-symbols-outlined">check_circle</span>
-<h4>¡Tu solicitud está lista!</h4>
-<p>Te abrimos <b>WhatsApp</b> con todos los datos de tu evento. Solo pulsa enviar y te confirmamos los detalles muy pronto.</p>
-<a id="eventWaFallback" class="event-wa-fallback" href="https://wa.me/573104964953" target="_blank" rel="noopener"><span class="material-symbols-outlined" aria-hidden="true">forum</span> ¿No se abrió? Abrir WhatsApp</a>
+<h4 id="eventSuccessTitle">¡Tu solicitud está lista!</h4>
+<p id="eventSuccessMsg">Te abrimos <b>WhatsApp</b> con todos los datos de tu evento. Solo pulsa enviar y te confirmamos los detalles muy pronto.</p>
+<a id="eventWaFallback" class="event-wa-fallback" href="https://wa.me/573104964953" target="_blank" rel="noopener"><span class="material-symbols-outlined" aria-hidden="true">forum</span> Escribir por WhatsApp</a>
 <button type="button" class="event-submit" id="eventDone">Listo</button>
 </div>
 </div>
@@ -1446,11 +1446,16 @@
       if (e.key === 'Tab' && card) trapFocus(card, e);
     });
     var waFallback = document.getElementById('eventWaFallback');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var data = Object.fromEntries(new FormData(form).entries());
-      // Entrega de la solicitud al WhatsApp del restaurante (canal actual).
-      // Más adelante puede reemplazarse/duplicarse a Google Sheets reutilizando `data`.
+    var successTitle = document.getElementById('eventSuccessTitle');
+    var successMsg = document.getElementById('eventSuccessMsg');
+    // ============================================================
+    //  GOOGLE SHEETS (opcional) — guardado centralizado de solicitudes
+    //  Pega abajo la URL de tu Apps Script Web App (termina en /exec).
+    //  Pasos completos en: google-apps-script.gs
+    //  Déjala vacía ('') para usar sólo WhatsApp.
+    var SHEETS_ENDPOINT = '';
+    // ============================================================
+    function buildWaUrl(data) {
       var lines = [
         'Hola, quiero *agendar un evento* en AveMaría:', '',
         'Nombre: ' + (data.nombre || ''),
@@ -1461,9 +1466,35 @@
         'Fecha: ' + (data.fecha || '') + (data.hora ? ' · ' + data.hora : ''),
         (data.mensaje ? 'Detalles: ' + data.mensaje : '')
       ].filter(Boolean);
-      var url = 'https://wa.me/573104964953?text=' + encodeURIComponent(lines.join('\n'));
-      if (waFallback) waFallback.href = url;
-      try { window.open(url, '_blank', 'noopener'); } catch (err) { /* el fallback queda disponible */ }
+      return 'https://wa.me/573104964953?text=' + encodeURIComponent(lines.join('\n'));
+    }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var data = Object.fromEntries(new FormData(form).entries());
+      var waUrl = buildWaUrl(data);
+      if (waFallback) waFallback.href = waUrl;
+      var savedToSheet = false;
+      if (SHEETS_ENDPOINT) {
+        // Apps Script no expone CORS: envío "fire-and-forget" (no se lee la respuesta).
+        try {
+          fetch(SHEETS_ENDPOINT, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(data)
+          }).catch(function () {});
+          savedToSheet = true;
+        } catch (err) { savedToSheet = false; }
+      }
+      if (savedToSheet) {
+        if (successTitle) successTitle.textContent = '¡Solicitud enviada!';
+        if (successMsg) successMsg.innerHTML = 'Recibimos los datos de tu evento. Te contactaremos muy pronto para confirmar los detalles.';
+      } else {
+        // Sin hoja conectada: el canal es WhatsApp (se abre el chat prellenado).
+        if (successTitle) successTitle.textContent = '¡Tu solicitud está lista!';
+        if (successMsg) successMsg.innerHTML = 'Te abrimos <b>WhatsApp</b> con todos los datos de tu evento. Solo pulsa enviar y te confirmamos los detalles muy pronto.';
+        try { window.open(waUrl, '_blank', 'noopener'); } catch (err) { /* el fallback queda disponible */ }
+      }
       form.hidden = true; success.hidden = false;
       if (card) card.scrollTop = 0;
     });
